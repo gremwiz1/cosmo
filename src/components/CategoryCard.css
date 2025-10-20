@@ -1,0 +1,126 @@
+.category-card {
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-height: 346px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-card:nth-child(1) {
+  border-color: #BEDBFF;
+}
+
+.category-card:nth-child(2) {
+  border-color: #E9D4FF;
+}
+
+.category-card:nth-child(3) {
+  border-color: #B9F8CF;
+}
+
+.category-card:nth-child(4) {
+  border-color: #FFD6A7;
+}
+
+.category-card:nth-child(5) {
+  border-color: #FCCEE8;
+}
+
+.category-card:nth-child(6) {
+  border-color: #96F7E4;
+}
+
+.category-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-name {
+  font-size: 20px;
+  font-weight: 400;
+  color: #0A0A0A;
+  line-height: 1.4;
+  letter-spacing: -0.45px;
+  margin: 0 0 12px 0;
+}
+
+.category-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4A5565;
+  line-height: 1.43;
+  letter-spacing: -0.15px;
+  margin: 0 0 20px 0;
+  flex: 1;
+}
+
+.category-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.category-count {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.15px;
+}
+
+.category-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  letter-spacing: -0.15px;
+  cursor: pointer;
+  padding: 0 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.category-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .category-card {
+    min-height: auto;
+    padding: 20px;
+  }
+  
+  .category-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .category-name {
+    font-size: 18px;
+  }
+}

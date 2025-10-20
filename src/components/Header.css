@@ -1,0 +1,152 @@
+/* Navigation Styles */
+.navigation {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 30.5px;
+  height: 81px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+  line-height: 1.56;
+  letter-spacing: -0.89px;
+}
+
+.logo-subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  color: #6B7280;
+  line-height: 1.43;
+  letter-spacing: -0.15px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #0A0A0A;
+}
+
+.nav-item.active {
+  color: #0A0A0A;
+  font-weight: 500;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #F3F4F6;
+}
+
+.nav-button.primary {
+  background-color: #155DFC;
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-button.primary:hover {
+  background-color: #1447E6;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #155DFC;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navigation {
+    padding: 0 16px;
+  }
+  
+  .nav-container {
+    padding: 0 16px;
+  }
+  
+  .nav-left {
+    gap: 16px;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+}

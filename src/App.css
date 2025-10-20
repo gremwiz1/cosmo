@@ -1,0 +1,84 @@
+/* App.css - Main application styles based on Figma design */
+
+.App {
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+
+/* Main Content */
+.main-content {
+  padding-top: 81px;
+}
+
+
+/* Categories Section */
+.categories-section {
+  padding: 48px 24px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.categories-header {
+  margin-bottom: 32px;
+}
+
+.categories-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #0A0A0A;
+  line-height: 1.33;
+  letter-spacing: 0.07px;
+  margin: 0 0 8px 0;
+}
+
+.categories-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4A5565;
+  line-height: 1.5;
+  letter-spacing: -0.31px;
+  margin: 0;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .categories-section {
+    padding: 24px 16px;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 24px;
+  }
+  
+  .categories-title {
+    font-size: 20px;
+  }
+  
+}
