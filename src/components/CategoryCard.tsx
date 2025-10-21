@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CategoryCard.css';
 import { Category } from '../types';
 
@@ -8,11 +9,15 @@ interface CategoryCardProps {
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category, onCategoryClick }) => {
+  const navigate = useNavigate();
   return (
     <div 
       className="category-card" 
       style={{ background: category.gradient }}
-      onClick={() => onCategoryClick(category)}
+      onClick={() => {
+        onCategoryClick(category);
+        navigate(`/category/${category.id}`);
+      }}
     >
       <div className="category-icon" style={{ color: category.color }}>
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">

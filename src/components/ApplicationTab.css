@@ -1,0 +1,160 @@
+/* Стили для секции применения */
+.application-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.applications-section {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.applications-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.application-card {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: #F9FAFB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.application-card:hover {
+  background: #F3F4F6;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.application-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.application-icon span {
+  font-size: 24px;
+}
+
+.application-content {
+  flex: 1;
+}
+
+.application-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.application-content p {
+  font-size: 14px;
+  color: #4A5565;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.usage-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #BFDBFE;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+}
+
+.formulation-support {
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.formulation-support h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0C4A6E;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.formulation-support p {
+  font-size: 14px;
+  color: #0C4A6E;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.support-button {
+  padding: 10px 20px;
+  background: #0EA5E9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.support-button:hover {
+  background-color: #0284C7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .applications-section,
+  .formulation-support {
+    padding: 16px;
+  }
+  
+  .application-card {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .application-icon {
+    align-self: flex-start;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .application-icon span {
+    font-size: 20px;
+  }
+  
+  .application-content h4 {
+    font-size: 16px;
+  }
+  
+  .formulation-support h4 {
+    font-size: 16px;
+  }
+}

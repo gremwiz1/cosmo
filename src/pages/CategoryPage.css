@@ -1,0 +1,253 @@
+.category-page {
+  padding: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #F9FAFB;
+  min-height: 100vh;
+}
+
+/* Кнопка назад */
+.back-button-container {
+  margin-bottom: 16px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #0A0A0A;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #F3F4F6;
+}
+
+.back-button svg {
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover svg {
+  transform: translateX(-2px);
+}
+
+/* Заголовок категории */
+.category-page-header {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-bottom: none;
+  padding: 32px 24px;
+  margin-bottom: 0;
+}
+
+.category-header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.category-page-title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #0A0A0A;
+  margin: 0 0 8px 0;
+  line-height: 1.11;
+  letter-spacing: 0.01em;
+}
+
+.category-page-description {
+  font-size: 20px;
+  color: #4A5565;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+/* Секция подкатегорий */
+.subcategories-section {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-top: none;
+  padding: 48px 24px;
+}
+
+.subcategories-header {
+  margin-bottom: 32px;
+}
+
+.subcategories-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #0A0A0A;
+  margin: 0 0 8px 0;
+  line-height: 1.33;
+  letter-spacing: 0.003em;
+}
+
+.subcategories-description {
+  font-size: 16px;
+  color: #4A5565;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+/* Сетка подкатегорий */
+.subcategories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Карточка подкатегории */
+.subcategory-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 24px 0 24px 24px;
+  border: 1px solid;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 200px;
+}
+
+.subcategory-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.subcategory-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subcategory-icon svg {
+  color: white;
+}
+
+.subcategory-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+.subcategory-name {
+  font-size: 20px;
+  font-weight: 400;
+  color: #0A0A0A;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.subcategory-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 56px;
+}
+
+.subcategory-count {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.01em;
+}
+
+.subcategory-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  line-height: 1.43;
+  letter-spacing: -0.01em;
+}
+
+.subcategory-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-page {
+    padding: 16px;
+  }
+  
+  .category-page-header {
+    padding: 24px 16px;
+  }
+  
+  .subcategories-section {
+    padding: 32px 16px;
+  }
+  
+  .category-page-title {
+    font-size: 28px;
+  }
+  
+  .category-page-description {
+    font-size: 18px;
+  }
+  
+  .subcategories-title {
+    font-size: 20px;
+  }
+  
+  .subcategories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .subcategory-card {
+    padding: 20px 0 20px 20px;
+    gap: 24px;
+  }
+  
+  .subcategory-content {
+    gap: 24px;
+  }
+  
+  .subcategory-footer {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subcategory-card {
+    padding: 16px 0 16px 16px;
+    gap: 20px;
+  }
+  
+  .subcategory-content {
+    gap: 20px;
+  }
+  
+  .subcategory-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .subcategory-button {
+    align-self: flex-end;
+  }
+}

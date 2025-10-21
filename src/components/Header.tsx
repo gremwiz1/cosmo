@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const location = useLocation();
   return (
     <nav className="navigation">
       <div className="nav-container">
         <div className="nav-left">
-          <div className="logo">
+          <Link to="/" className="logo">
             <div className="logo-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#155DFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -18,13 +20,21 @@ const Header: React.FC = () => {
               <div className="logo-title">CosmoTech</div>
               <div className="logo-subtitle">by CosmoHome</div>
             </div>
-          </div>
+          </Link>
           
           <div className="nav-menu">
-            <button className="nav-item">Панель</button>
-            <button className="nav-item active">Маркетплейс</button>
-            <button className="nav-item">Формулятор</button>
-            <button className="nav-item">Обучение</button>
+            <Link to="/dashboard" className={`nav-item ${location.pathname === '/dashboard' ? 'active' : ''}`}>
+              Панель
+            </Link>
+            <Link to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
+              Маркетплейс
+            </Link>
+            <Link to="/formulator" className={`nav-item ${location.pathname === '/formulator' ? 'active' : ''}`}>
+              Формулятор
+            </Link>
+            <Link to="/education" className={`nav-item ${location.pathname === '/education' ? 'active' : ''}`}>
+              Обучение
+            </Link>
           </div>
         </div>
         
@@ -35,7 +45,7 @@ const Header: React.FC = () => {
             </svg>
           </button>
           <button className="nav-button primary">Поддержка</button>
-          <div className="user-avatar">SJ</div>
+          <Link to="/profile" className="user-avatar">SJ</Link>
           <button className="nav-button">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M2 2L14 14M14 2L2 14" stroke="#364153" strokeWidth="1.67" strokeLinecap="round"/>
