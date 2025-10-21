@@ -7,7 +7,6 @@ import activeIngredientsIcon from "../assets/images/subcategories/active-ingredi
 import baseOilsIcon from "../assets/images/subcategories/base-oils.png";
 import plantExtractsIcon from "../assets/images/subcategories/plant-extracts.png";
 import PavIcon from "../assets/images/subcategories/pav.png";
-import surfactantsIcon from "../assets/images/subcategories/surfactants.png";
 import EmulsifiersIcon from "../assets/images/subcategories/emulsifiersIcon.png";
 import ConsevanantsIcon from "../assets/images/subcategories/consevanantsIcon.png";
 import SoftenersIcon from "../assets/images/subcategories/softenersIcon.png";
@@ -15,6 +14,7 @@ import UvFiltersIcon from "../assets/images/subcategories/uv-filtersIcon.png";
 import PeptidesIcon from "../assets/images/subcategories/peptidesIcon.png";
 import OilsAndWaxesIcon from "../assets/images/subcategories/oils-and-waxesIcon.png";
 import RelaxingAgentsIcon from "../assets/images/subcategories/relaxing-agentsIcon.png";
+import surfactantsIcon from "../assets/images/subcategories/surfactants.png";
 // Подкатегории для сырья согласно макету Figma
 const rawMaterialSubcategories = [
   {

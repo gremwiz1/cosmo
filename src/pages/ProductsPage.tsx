@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './ProductsPage.module.scss';
-
-// Mock данные товаров согласно макету Figma
+import productImage from '../assets/images/product-icon.png';
+import backButtonIcon from '../assets/images/left-arrow.png';
+import sortArrowIcon from '../assets/images/sort-arrow.png';
+import viewToggleIcon from '../assets/images/view-toggle.png';
+import cartIconButton from '../assets/images/cart-icon-button.png';
+import searchIcon from '../assets/images/search-icon.png';
+import filterIcon from '../assets/images/filter-icon.png';
+// Mock данные товаров 
 const mockProducts = [
   {
     id: 1,
@@ -16,7 +22,8 @@ const mockProducts = [
     fullDescription: "Сверхчистая высокомолекулярная гиалуроновая кислота",
     price: 5250,
     unit: "kg",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=301&h=192&fit=crop"
+    image: productImage,
+    background: "linear-gradient(135deg, rgba(219, 234, 254, 1) 0%, rgba(224, 231, 255, 1) 100%)"
   },
   {
     id: 2,
@@ -30,7 +37,8 @@ const mockProducts = [
     fullDescription: "Витамин B3 фармацевтического качества",
     price: 3500,
     unit: "kg",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=301&h=192&fit=crop"
+    image: productImage,
+    background: "linear-gradient(135deg, #F3E8FF 0%, #FCE7F3 100%)"
   },
   {
     id: 3,
@@ -44,7 +52,8 @@ const mockProducts = [
     fullDescription: "Органическое масло шиповника холодного отжима",
     price: 9500,
     unit: "kg",
-    image: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=301&h=192&fit=crop"
+    image: productImage,
+    background: "linear-gradient(135deg, #FFEDD4 0%, #FFE2E2 100%)"
   }
 ];
 
@@ -57,6 +66,10 @@ const ProductsPage: React.FC = () => {
 
   const handleBackToCategories = () => {
     navigate('/');
+  };
+
+  const handleBackToSubcategories = () => {
+    navigate('/category/1'); // Возврат к подкатегориям сырья
   };
 
   const handleFilterToggle = (filter: string) => {
@@ -91,12 +104,16 @@ const ProductsPage: React.FC = () => {
 
   return (
     <div className={styles.productsPage}>
-      {/* Кнопка назад */}
+      {/* Кнопки назад */}
       <div className={styles.backButtonContainer}>
+        <button className={styles.backButton} onClick={handleBackToSubcategories}>
+          <img src={backButtonIcon} alt="back" className={styles.backButtonIcon}/>
+          Назад к категориям
+        </button>
+      </div>
+      <div className={styles.backButtonContainerSecondary}>
         <button className={styles.backButton} onClick={handleBackToCategories}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <img src={backButtonIcon} alt="back" className={styles.backButtonIcon}/>
           Назад к категориям
         </button>
       </div>
@@ -104,16 +121,16 @@ const ProductsPage: React.FC = () => {
       {/* Заголовок с поиском */}
       <div className={styles.searchHeader}>
         <div className={styles.searchHeaderContent}>
-          <h1 className={styles.searchTitle}>Сырьё / Raw Materials</h1>
+          <h1 className={styles.searchTitle}>
+            {subcategoryId ? `Подкатегория ${subcategoryId}` : 'Сырьё / Raw Materials'}
+          </h1>
           <div className={styles.searchContainer}>
+            <img src={searchIcon} alt="search" className={styles.searchIcon}/>
             <input 
               type="text" 
               placeholder="Поиск по INCI, CAS или ключевому слову"
               className={styles.searchInput}
             />
-            <svg className={styles.searchIcon} width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#99A1AF" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </div>
         </div>
       </div>
@@ -122,9 +139,7 @@ const ProductsPage: React.FC = () => {
         {/* Боковая панель фильтров */}
         <div className={styles.filtersSidebar}>
           <div className={styles.filtersHeader}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M2 2L14 14M14 2L2 14" stroke="#4A5565" strokeWidth="1.33" strokeLinecap="round"/>
-            </svg>
+            <img src={filterIcon} alt="filter" className={styles.filterIcon} />
             <h3>Фильтры / Filters</h3>
           </div>
 
@@ -132,13 +147,20 @@ const ProductsPage: React.FC = () => {
             <h4 className={styles.filterLabel}>Категория / Category</h4>
             <div className={styles.filterOptions}>
               {categories.map(category => (
-                <button
+                <div
                   key={category}
-                  className={`${styles.filterOption} ${selectedFilters.includes(category) ? styles.active : ''}`}
+                  className={styles.filterOption}
                   onClick={() => handleFilterToggle(category)}
                 >
-                  {category}
-                </button>
+                  <div className={`${styles.checkbox} ${selectedFilters.includes(category) ? styles.checked : ''}`}>
+                    {selectedFilters.includes(category) && (
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                  </div>
+                  <span className={styles.filterText}>{category}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -149,13 +171,20 @@ const ProductsPage: React.FC = () => {
             <h4 className={styles.filterLabel}>Происхождение / Origin</h4>
             <div className={styles.filterOptions}>
               {origins.map(origin => (
-                <button
+                <div
                   key={origin}
-                  className={`${styles.filterOption} ${selectedOrigin.includes(origin) ? styles.active : ''}`}
+                  className={styles.filterOption}
                   onClick={() => handleOriginToggle(origin)}
                 >
-                  {origin}
-                </button>
+                  <div className={`${styles.checkbox} ${selectedOrigin.includes(origin) ? styles.checked : ''}`}>
+                    {selectedOrigin.includes(origin) && (
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                  </div>
+                  <span className={styles.filterText}>{origin}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -163,12 +192,19 @@ const ProductsPage: React.FC = () => {
           <div className={styles.filterDivider}></div>
 
           <div className={styles.filterSection}>
-            <button
-              className={`${styles.filterOption} ${inStockOnly ? styles.active : ''}`}
+            <div
+              className={styles.filterOption}
               onClick={() => setInStockOnly(!inStockOnly)}
             >
-              Только в наличии / In Stock Only
-            </button>
+              <div className={`${styles.checkbox} ${inStockOnly ? styles.checked : ''}`}>
+                {inStockOnly && (
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+              </div>
+              <span className={styles.filterText}>Только в наличии / In Stock Only</span>
+            </div>
           </div>
         </div>
 
@@ -179,17 +215,10 @@ const ProductsPage: React.FC = () => {
             <div className={styles.sortContainer}>
               <button className={styles.sortButton}>
                 Самые релевантные
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6L8 10L12 6" stroke="#6B7280" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src={sortArrowIcon} alt="sort" className={styles.sortIcon} />
               </button>
               <div className={styles.viewToggle}>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <rect x="2" y="2" width="4" height="4" stroke="#D1D5DC" strokeWidth="1"/>
-                  <rect x="8" y="2" width="4" height="4" stroke="#D1D5DC" strokeWidth="1"/>
-                  <rect x="2" y="8" width="4" height="4" stroke="#D1D5DC" strokeWidth="1"/>
-                  <rect x="8" y="8" width="4" height="4" stroke="#D1D5DC" strokeWidth="1"/>
-                </svg>
+                <img src={viewToggleIcon} alt="view toggle" className={styles.viewToggleIcon} />
               </div>
             </div>
           </div>
@@ -197,7 +226,7 @@ const ProductsPage: React.FC = () => {
           <div className={styles.productsGrid}>
             {mockProducts.map(product => (
               <div key={product.id} className={styles.productCard} onClick={() => handleProductClick(product)}>
-                <div className={styles.productImage}>
+                <div className={styles.productImage} style={{ background: product.background }}>
                   <img src={product.image} alt={product.name} />
                 </div>
                 
@@ -230,9 +259,7 @@ const ProductsPage: React.FC = () => {
                       <span className={styles.priceUnit}>/{product.unit}</span>
                     </div>
                     <button className={styles.addToCartButton}>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M4.67 13.33H12.67M4.67 13.33C4.67 13.33 1.37 1.37 13.36 9.33M4.67 13.33C4.67 13.33 1.37 1.37 13.36 9.33M12 13.33H4.67M12 13.33C12 13.33 15.3 1.37 3.31 9.33" stroke="white" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                      <img src={cartIconButton} alt="cart" className={styles.cartButtonIcon} />
                       В корзину
                     </button>
                   </div>
