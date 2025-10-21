@@ -1,7 +1,6 @@
 /* CategoryPage.module.scss - Category page styles */
 
 .categoryPage {
-  padding: 24px;
   max-width: 1280px;
   margin: 0 auto;
   background: #F9FAFB;
@@ -10,20 +9,29 @@
 
 // Кнопка назад
 .backButtonContainer {
-  margin-bottom: 16px;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E5E7EB;
+  padding-left: 24px;
 }
 
 .backButton {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
   background: none;
   border: none;
   color: #0A0A0A;
   font-size: 14px;
+  line-height: 20px;
   font-weight: 500;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
-  padding: 8px 12px;
+  width: 194px;
+  height: 36px;
+  padding: 0;
+  padding-left: 12px;
   border-radius: 8px;
   transition: all 0.2s ease;
 
@@ -31,13 +39,19 @@
     background-color: #F3F4F6;
   }
 
-  svg {
+  img {
     transition: transform 0.2s ease;
   }
 
-  &:hover svg {
+  &:hover img {
     transform: translateX(-2px);
   }
+}
+
+.backButtonIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
 // Заголовок категории
@@ -74,13 +88,12 @@
 // Секция подкатегорий
 .subcategoriesSection {
   background: white;
-  border: 1px solid #E5E7EB;
-  border-top: none;
-  padding: 48px 24px;
+  padding-top: 48px;
 }
 
 .subcategoriesHeader {
   margin-bottom: 32px;
+  padding-left: 24px;
 }
 
 .subcategoriesTitle {
@@ -103,9 +116,12 @@
 // Сетка подкатегорий
 .subcategoriesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 24px;
   max-width: 1280px;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -114,12 +130,13 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 24px 0 24px 24px;
+  padding: 24px;
   border: 1px solid;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  min-height: 200px;
+  min-height: 246px;
+  width: 290px;
 
   &:hover {
     transform: translateY(-2px);
@@ -129,16 +146,23 @@
 
 .subcategoryIcon {
   width: 64px;
-  height: 64px;
+  height: 56px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
 
   svg {
     color: white;
   }
+}
+
+.subcategoryIconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .subcategoryContent {
@@ -180,7 +204,7 @@
   padding: 0 12px;
   border-radius: 8px;
   transition: all 0.2s ease;
-  line-height: 1.43;
+  line-height: 20px;
   letter-spacing: -0.01em;
 
   &:hover {
@@ -193,41 +217,41 @@
   .categoryPage {
     padding: 16px;
   }
-  
+
   .categoryPageHeader {
     padding: 24px 16px;
   }
-  
+
   .subcategoriesSection {
     padding: 32px 16px;
   }
-  
+
   .categoryPageTitle {
     font-size: 28px;
   }
-  
+
   .categoryPageDescription {
     font-size: 18px;
   }
-  
+
   .subcategoriesTitle {
     font-size: 20px;
   }
-  
+
   .subcategoriesGrid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   .subcategoryCard {
     padding: 20px 0 20px 20px;
     gap: 24px;
   }
-  
+
   .subcategoryContent {
     gap: 24px;
   }
-  
+
   .subcategoryFooter {
     gap: 24px;
   }
@@ -238,17 +262,17 @@
     padding: 16px 0 16px 16px;
     gap: 20px;
   }
-  
+
   .subcategoryContent {
     gap: 20px;
   }
-  
+
   .subcategoryFooter {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-  
+
   .subcategoryButton {
     align-self: flex-end;
   }
