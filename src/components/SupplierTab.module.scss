@@ -1,22 +1,22 @@
 /* Стили для секции о поставщике */
-.supplier-card {
+.supplierCard {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 24px;
 }
 
-.supplier-header {
+.supplierHeader {
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
 }
 
-.supplier-logo {
+.supplierLogo {
   flex-shrink: 0;
 }
 
-.logo-circle {
+.logoCircle {
   width: 64px;
   height: 64px;
   background: #155DFC;
@@ -24,96 +24,96 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  span {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    line-height: 1.4;
+  }
 }
 
-.logo-circle span {
-  font-size: 20px;
-  font-weight: 400;
-  color: white;
-  line-height: 1.4;
-}
-
-.supplier-info {
+.supplierInfo {
   flex: 1;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+  }
 }
 
-.supplier-info h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #101828;
-  margin: 0 0 4px 0;
-  line-height: 1.4;
-}
-
-.supplier-details {
+.supplierDetails {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
 }
 
-.detail-item {
+.detailItem {
   display: flex;
   align-items: center;
   gap: 4px;
+
+  span {
+    font-size: 14px;
+    color: #4A5565;
+    line-height: 1.43;
+  }
 }
 
-.detail-item span {
-  font-size: 14px;
-  color: #4A5565;
-  line-height: 1.43;
-}
-
-.supplier-details .divider {
+.supplierDetails .divider {
   width: 1px;
   height: 20px;
   background: rgba(0, 0, 0, 0.1);
 }
 
-.supplier-rating {
+.supplierRating {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.rating-stars {
+.ratingStars {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.rating-score {
+.ratingScore {
   font-size: 16px;
   font-weight: 600;
   color: #0A0A0A;
   line-height: 1.5;
 }
 
-.rating-reviews {
+.ratingReviews {
   font-size: 14px;
   color: #6A7282;
   line-height: 1.43;
 }
 
-.certifications-section {
+.certificationsSection {
   margin-bottom: 24px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #101828;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+  }
 }
 
-.certifications-section h4 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #101828;
-  margin: 0 0 12px 0;
-  line-height: 1.5;
-}
-
-.certifications-list {
+.certificationsList {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.certification-badge {
+.certificationBadge {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -121,60 +121,62 @@
   border: 1px solid #B9F8CF;
   border-radius: 8px;
   padding: 4px 8px;
+
+  span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #008236;
+    line-height: 1.33;
+  }
 }
 
-.certification-badge span {
-  font-size: 12px;
-  font-weight: 500;
-  color: #008236;
-  line-height: 1.33;
+.otherMaterialsSection {
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #101828;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+  }
 }
 
-.other-materials-section h4 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #101828;
-  margin: 0 0 12px 0;
-  line-height: 1.5;
-}
-
-.materials-grid {
+.materialsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-bottom: 16px;
 }
 
-.material-card {
+.materialCard {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #155DFC;
+    box-shadow: 0 2px 8px rgba(21, 93, 252, 0.1);
+  }
+
+  h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #101828;
+    margin: 0 0 4px 0;
+    line-height: 1.43;
+  }
+
+  p {
+    font-size: 12px;
+    color: #4A5565;
+    margin: 0;
+    line-height: 1.33;
+  }
 }
 
-.material-card:hover {
-  border-color: #155DFC;
-  box-shadow: 0 2px 8px rgba(21, 93, 252, 0.1);
-}
-
-.material-card h5 {
-  font-size: 14px;
-  font-weight: 500;
-  color: #101828;
-  margin: 0 0 4px 0;
-  line-height: 1.43;
-}
-
-.material-card p {
-  font-size: 12px;
-  color: #4A5565;
-  margin: 0;
-  line-height: 1.33;
-}
-
-.view-all-button {
+.viewAllButton {
   width: 100%;
   padding: 8px 16px;
   background: white;
@@ -185,31 +187,31 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #F3F4F6;
+  }
 }
 
-.view-all-button:hover {
-  background-color: #F3F4F6;
-}
-
-/* Адаптивность */
+// Адаптивность
 @media (max-width: 1200px) {
-  .supplier-header {
+  .supplierHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
   
-  .supplier-details {
+  .supplierDetails {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+
+    .divider {
+      display: none;
+    }
   }
   
-  .supplier-details .divider {
-    display: none;
-  }
-  
-  .materials-grid {
+  .materialsGrid {
     grid-template-columns: 1fr;
     gap: 8px;
   }

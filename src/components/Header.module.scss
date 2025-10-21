@@ -1,0 +1,154 @@
+// Navigation Styles
+.navigation {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0 30.5px;
+    height: 81px;
+    display: flex;
+    align-items: center;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logoIcon {
+    width: 134.22px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.navMenu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navItem {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B7280;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+        color: #0A0A0A;
+    }
+
+    &.active {
+        color: #6B7280;
+        font-weight: 400;
+    }
+}
+
+.cartIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.languageIcon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.navRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navButton {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    width: 36px;
+    height: 32px;
+
+    &:hover {
+        background-color: #F3F4F6;
+    }
+
+    &.support {
+        background: none;
+        color: #0A0A0A;
+        padding: 0px 12px;
+        font-size: 14px;
+        font-weight: 500;
+        width: auto;
+        height: 32px;
+
+        &:hover {
+            background-color: #F3F4F6;
+        }
+    }
+}
+
+.userAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #155DFC;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #1447E6;
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .navigation {
+        padding: 0 16px;
+    }
+
+    .navContainer {
+        padding: 0 16px;
+    }
+
+    .navLeft {
+        gap: 16px;
+    }
+
+    .navMenu {
+        display: none;
+    }
+}

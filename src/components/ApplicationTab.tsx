@@ -1,5 +1,5 @@
 import React from 'react';
-import './ApplicationTab.css';
+import styles from './ApplicationTab.module.scss';
 
 const ApplicationTab: React.FC = () => {
   const handleContactSupport = () => {
@@ -41,20 +41,20 @@ const ApplicationTab: React.FC = () => {
   ];
 
   return (
-    <div className="tab-content">
-      <div className="application-section">
-        <div className="applications-section">
+    <div className={styles.tabContent}>
+      <div className={styles.applicationSection}>
+        <div className={styles.applicationsSection}>
           <h3>Типичные применения</h3>
-          <div className="applications-list">
+          <div className={styles.applicationsList}>
             {applications.map((app, index) => (
-              <div key={index} className="application-card">
-                <div className="application-icon">
+              <div key={index} className={styles.applicationCard}>
+                <div className={styles.applicationIcon}>
                   <span>{app.icon}</span>
                 </div>
-                <div className="application-content">
+                <div className={styles.applicationContent}>
                   <h4>{app.title}</h4>
                   <p>{app.description}</p>
-                  <div className="usage-badge">
+                  <div className={styles.usageBadge}>
                     {app.usage}
                   </div>
                 </div>
@@ -63,7 +63,7 @@ const ApplicationTab: React.FC = () => {
           </div>
         </div>
         
-        <div className="formulation-support">
+        <div className={styles.formulationSupport}>
           <h4>Поддержка формулировки</h4>
           <p>
             Наша команда технических специалистов готова помочь вам в разработке 
@@ -71,7 +71,7 @@ const ApplicationTab: React.FC = () => {
             консультации по совместимости ингредиентов, оптимизации концентраций и 
             достижению желаемых свойств продукта.
           </p>
-          <button className="support-button" onClick={handleContactSupport}>
+          <button className={styles.supportButton} onClick={handleContactSupport}>
             Связаться с технической поддержкой
           </button>
         </div>

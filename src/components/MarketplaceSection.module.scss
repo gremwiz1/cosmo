@@ -1,0 +1,122 @@
+/* Marketplace Header */
+.marketplaceHeader {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding-left: 54.5px;
+  padding-right: 54.5px;
+  padding-top: 32px;
+  padding-bottom: 57px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1341px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 685px;
+  height: 76px;
+}
+
+.headerTitle {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 400;
+  color: #0A0A0A;
+  line-height: 40px;
+  letter-spacing: 0.37px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.headerDescription {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  color: #4A5565;
+  line-height: 28px;
+  letter-spacing: -0.45px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.buyerModeBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #EFF6FF;
+  border: 1px solid #8EC5FF;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 171.03px;
+  height: 34px;
+  white-space: nowrap;
+}
+
+.badgeIcon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.buyerModeBadge span {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1447E6;
+  line-height: 1.3333333333333333em;
+  text-align: left;
+  width: 113px;
+  height: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .marketplaceHeader {
+    padding: 24px 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .headerContainer {
+    max-width: 100%;
+    padding: 0 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    height: auto;
+  }
+
+  .headerContent {
+    width: 100%;
+    height: auto;
+  }
+
+  .headerTitle {
+    font-size: 28px;
+    width: auto;
+    height: auto;
+  }
+
+  .headerDescription {
+    font-size: 16px;
+    width: auto;
+    height: auto;
+  }
+
+  .buyerModeBadge {
+    width: auto;
+    height: auto;
+  }
+}

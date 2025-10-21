@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './ProductsPage.css';
+import styles from './ProductsPage.module.scss';
 
 // Mock данные товаров согласно макету Figma
 const mockProducts = [
@@ -90,10 +90,10 @@ const ProductsPage: React.FC = () => {
   const origins = ["Натуральное", "Синтетическое", "Биотехнологическое"];
 
   return (
-    <div className="products-page">
+    <div className={styles.productsPage}>
       {/* Кнопка назад */}
-      <div className="back-button-container">
-        <button className="back-button" onClick={handleBackToCategories}>
+      <div className={styles.backButtonContainer}>
+        <button className={styles.backButton} onClick={handleBackToCategories}>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -102,39 +102,39 @@ const ProductsPage: React.FC = () => {
       </div>
 
       {/* Заголовок с поиском */}
-      <div className="search-header">
-        <div className="search-header-content">
-          <h1 className="search-title">Сырьё / Raw Materials</h1>
-          <div className="search-container">
+      <div className={styles.searchHeader}>
+        <div className={styles.searchHeaderContent}>
+          <h1 className={styles.searchTitle}>Сырьё / Raw Materials</h1>
+          <div className={styles.searchContainer}>
             <input 
               type="text" 
               placeholder="Поиск по INCI, CAS или ключевому слову"
-              className="search-input"
+              className={styles.searchInput}
             />
-            <svg className="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <svg className={styles.searchIcon} width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#99A1AF" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="products-layout">
+      <div className={styles.productsLayout}>
         {/* Боковая панель фильтров */}
-        <div className="filters-sidebar">
-          <div className="filters-header">
+        <div className={styles.filtersSidebar}>
+          <div className={styles.filtersHeader}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M2 2L14 14M14 2L2 14" stroke="#4A5565" strokeWidth="1.33" strokeLinecap="round"/>
             </svg>
             <h3>Фильтры / Filters</h3>
           </div>
 
-          <div className="filter-section">
-            <h4 className="filter-label">Категория / Category</h4>
-            <div className="filter-options">
+          <div className={styles.filterSection}>
+            <h4 className={styles.filterLabel}>Категория / Category</h4>
+            <div className={styles.filterOptions}>
               {categories.map(category => (
                 <button
                   key={category}
-                  className={`filter-option ${selectedFilters.includes(category) ? 'active' : ''}`}
+                  className={`${styles.filterOption} ${selectedFilters.includes(category) ? styles.active : ''}`}
                   onClick={() => handleFilterToggle(category)}
                 >
                   {category}
@@ -143,15 +143,15 @@ const ProductsPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="filter-divider"></div>
+          <div className={styles.filterDivider}></div>
 
-          <div className="filter-section">
-            <h4 className="filter-label">Происхождение / Origin</h4>
-            <div className="filter-options">
+          <div className={styles.filterSection}>
+            <h4 className={styles.filterLabel}>Происхождение / Origin</h4>
+            <div className={styles.filterOptions}>
               {origins.map(origin => (
                 <button
                   key={origin}
-                  className={`filter-option ${selectedOrigin.includes(origin) ? 'active' : ''}`}
+                  className={`${styles.filterOption} ${selectedOrigin.includes(origin) ? styles.active : ''}`}
                   onClick={() => handleOriginToggle(origin)}
                 >
                   {origin}
@@ -160,11 +160,11 @@ const ProductsPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="filter-divider"></div>
+          <div className={styles.filterDivider}></div>
 
-          <div className="filter-section">
+          <div className={styles.filterSection}>
             <button
-              className={`filter-option ${inStockOnly ? 'active' : ''}`}
+              className={`${styles.filterOption} ${inStockOnly ? styles.active : ''}`}
               onClick={() => setInStockOnly(!inStockOnly)}
             >
               Только в наличии / In Stock Only
@@ -173,17 +173,17 @@ const ProductsPage: React.FC = () => {
         </div>
 
         {/* Основной контент */}
-        <div className="main-content">
-          <div className="results-header">
-            <span className="results-count">3 материалов найдено</span>
-            <div className="sort-container">
-              <button className="sort-button">
+        <div className={styles.mainContent}>
+          <div className={styles.resultsHeader}>
+            <span className={styles.resultsCount}>3 материалов найдено</span>
+            <div className={styles.sortContainer}>
+              <button className={styles.sortButton}>
                 Самые релевантные
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M4 6L8 10L12 6" stroke="#6B7280" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <div className="view-toggle">
+              <div className={styles.viewToggle}>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <rect x="2" y="2" width="4" height="4" stroke="#D1D5DC" strokeWidth="1"/>
                   <rect x="8" y="2" width="4" height="4" stroke="#D1D5DC" strokeWidth="1"/>
@@ -194,21 +194,21 @@ const ProductsPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="products-grid">
+          <div className={styles.productsGrid}>
             {mockProducts.map(product => (
-              <div key={product.id} className="product-card" onClick={() => handleProductClick(product)}>
-                <div className="product-image">
+              <div key={product.id} className={styles.productCard} onClick={() => handleProductClick(product)}>
+                <div className={styles.productImage}>
                   <img src={product.image} alt={product.name} />
                 </div>
                 
-                <div className="product-content">
-                  <div className="product-header">
-                    <div className="product-info">
-                      <h3 className="product-name">{product.name}</h3>
-                      <p className="product-description">{product.description}</p>
-                      <p className="product-cas">{product.cas}</p>
+                <div className={styles.productContent}>
+                  <div className={styles.productHeader}>
+                    <div className={styles.productInfo}>
+                      <h3 className={styles.productName}>{product.name}</h3>
+                      <p className={styles.productDescription}>{product.description}</p>
+                      <p className={styles.productCas}>{product.cas}</p>
                     </div>
-                    <div className="product-rating">
+                    <div className={styles.productRating}>
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M8 1L9.5 5.5L14 5.5L10.5 8.5L12 13L8 10L4 13L5.5 8.5L2 5.5L6.5 5.5L8 1Z" fill="#FDC700" stroke="#FDC700" strokeWidth="1.33"/>
                       </svg>
@@ -216,20 +216,20 @@ const ProductsPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="product-badges">
-                    <span className="badge primary">{product.category}</span>
-                    <span className="badge secondary">{product.origin}</span>
-                    <span className="badge success">{product.availability}</span>
+                  <div className={styles.productBadges}>
+                    <span className={`${styles.badge} ${styles.primary}`}>{product.category}</span>
+                    <span className={`${styles.badge} ${styles.secondary}`}>{product.origin}</span>
+                    <span className={`${styles.badge} ${styles.success}`}>{product.availability}</span>
                   </div>
 
-                  <p className="product-full-description">{product.fullDescription}</p>
+                  <p className={styles.productFullDescription}>{product.fullDescription}</p>
 
-                  <div className="product-footer">
-                    <div className="product-price">
-                      <span className="price-amount">₽{product.price.toLocaleString()}</span>
-                      <span className="price-unit">/{product.unit}</span>
+                  <div className={styles.productFooter}>
+                    <div className={styles.productPrice}>
+                      <span className={styles.priceAmount}>₽{product.price.toLocaleString()}</span>
+                      <span className={styles.priceUnit}>/{product.unit}</span>
                     </div>
-                    <button className="add-to-cart-button">
+                    <button className={styles.addToCartButton}>
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M4.67 13.33H12.67M4.67 13.33C4.67 13.33 1.37 1.37 13.36 9.33M4.67 13.33C4.67 13.33 1.37 1.37 13.36 9.33M12 13.33H4.67M12 13.33C12 13.33 15.3 1.37 3.31 9.33" stroke="white" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>

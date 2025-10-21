@@ -1,32 +1,32 @@
 /* Стили для секции применения */
-.application-section {
+.applicationSection {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.applications-section {
+.applicationsSection {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 24px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+  }
 }
 
-.applications-section h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #101828;
-  margin: 0 0 20px 0;
-  line-height: 1.4;
-}
-
-.applications-list {
+.applicationsList {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.application-card {
+.applicationCard {
   display: flex;
   gap: 16px;
   padding: 20px;
@@ -34,15 +34,15 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   transition: all 0.2s ease;
+
+  &:hover {
+    background: #F3F4F6;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
 }
 
-.application-card:hover {
-  background: #F3F4F6;
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.application-icon {
+.applicationIcon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,32 +52,32 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   flex-shrink: 0;
+
+  span {
+    font-size: 24px;
+  }
 }
 
-.application-icon span {
-  font-size: 24px;
-}
-
-.application-content {
+.applicationContent {
   flex: 1;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 14px;
+    color: #4A5565;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+  }
 }
 
-.application-content h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #101828;
-  margin: 0 0 8px 0;
-  line-height: 1.4;
-}
-
-.application-content p {
-  font-size: 14px;
-  color: #4A5565;
-  line-height: 1.6;
-  margin: 0 0 12px 0;
-}
-
-.usage-badge {
+.usageBadge {
   display: inline-block;
   padding: 4px 12px;
   background: #EFF6FF;
@@ -89,29 +89,29 @@
   line-height: 1.33;
 }
 
-.formulation-support {
+.formulationSupport {
   background: #F0F9FF;
   border: 1px solid #BAE6FD;
   border-radius: 12px;
   padding: 24px;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0C4A6E;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 14px;
+    color: #0C4A6E;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
 }
 
-.formulation-support h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #0C4A6E;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
-}
-
-.formulation-support p {
-  font-size: 14px;
-  color: #0C4A6E;
-  line-height: 1.6;
-  margin: 0 0 20px 0;
-}
-
-.support-button {
+.supportButton {
   padding: 10px 20px;
   background: #0EA5E9;
   color: white;
@@ -121,40 +121,40 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #0284C7;
+  }
 }
 
-.support-button:hover {
-  background-color: #0284C7;
-}
-
-/* Адаптивность */
+// Адаптивность
 @media (max-width: 768px) {
-  .applications-section,
-  .formulation-support {
+  .applicationsSection,
+  .formulationSupport {
     padding: 16px;
   }
   
-  .application-card {
+  .applicationCard {
     flex-direction: column;
     gap: 12px;
     padding: 16px;
   }
   
-  .application-icon {
+  .applicationIcon {
     align-self: flex-start;
     width: 48px;
     height: 48px;
+
+    span {
+      font-size: 20px;
+    }
   }
   
-  .application-icon span {
-    font-size: 20px;
-  }
-  
-  .application-content h4 {
+  .applicationContent h4 {
     font-size: 16px;
   }
   
-  .formulation-support h4 {
+  .formulationSupport h4 {
     font-size: 16px;
   }
 }

@@ -1,42 +1,42 @@
 import React from 'react';
-import './ProfilePage.css';
+import styles from './ProfilePage.module.scss';
 
 const ProfilePage: React.FC = () => {
   return (
-    <div className="profile-page">
-      <div className="profile-page-header">
-        <h1 className="profile-page-title">Профиль пользователя</h1>
-        <p className="profile-page-description">
+    <div className={styles.profilePage}>
+      <div className={styles.profilePageHeader}>
+        <h1 className={styles.profilePageTitle}>Профиль пользователя</h1>
+        <p className={styles.profilePageDescription}>
           Управляйте своими данными и настройками
         </p>
       </div>
       
-      <div className="profile-page-content">
-        <div className="profile-sidebar">
-          <div className="profile-avatar">
-            <div className="avatar-circle">SJ</div>
+      <div className={styles.profilePageContent}>
+        <div className={styles.profileSidebar}>
+          <div className={styles.profileAvatar}>
+            <div className={styles.avatarCircle}>SJ</div>
             <h3>Сергей Иванов</h3>
             <p>sergey.ivanov@company.com</p>
           </div>
           
-          <nav className="profile-nav">
-            <a href="#" className="nav-item active">Личные данные</a>
-            <a href="#" className="nav-item">Компания</a>
-            <a href="#" className="nav-item">Заказы</a>
-            <a href="#" className="nav-item">Настройки</a>
+          <nav className={styles.profileNav}>
+            <a href="#" className={`${styles.navItem} ${styles.active}`}>Личные данные</a>
+            <a href="#" className={styles.navItem}>Компания</a>
+            <a href="#" className={styles.navItem}>Заказы</a>
+            <a href="#" className={styles.navItem}>Настройки</a>
           </nav>
         </div>
         
-        <div className="profile-main">
-          <div className="profile-section">
+        <div className={styles.profileMain}>
+          <div className={styles.profileSection}>
             <h2>Личные данные</h2>
-            <form className="profile-form">
-              <div className="form-row">
-                <div className="form-group">
+            <form className={styles.profileForm}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
                   <label>Имя</label>
                   <input type="text" defaultValue="Сергей" />
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                   <label>Фамилия</label>
                   <input type="text" defaultValue="Иванов" />
                 </div>
@@ -57,31 +57,31 @@ const ProfilePage: React.FC = () => {
                 <input type="text" defaultValue="Менеджер по закупкам" />
               </div>
               
-              <div className="form-actions">
-                <button type="submit" className="btn btn-primary">Сохранить изменения</button>
-                <button type="button" className="btn btn-secondary">Отмена</button>
+              <div className={styles.formActions}>
+                <button type="submit" className={`${styles.btn} ${styles.primary}`}>Сохранить изменения</button>
+                <button type="button" className={`${styles.btn} ${styles.secondary}`}>Отмена</button>
               </div>
             </form>
           </div>
           
-          <div className="profile-section">
+          <div className={styles.profileSection}>
             <h2>Статистика</h2>
-            <div className="stats-grid">
-              <div className="stat-card">
-                <div className="stat-number">24</div>
-                <div className="stat-label">Заказов</div>
+            <div className={styles.statsGrid}>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>24</div>
+                <div className={styles.statLabel}>Заказов</div>
               </div>
-              <div className="stat-card">
-                <div className="stat-number">₽156,000</div>
-                <div className="stat-label">Потрачено</div>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>₽156,000</div>
+                <div className={styles.statLabel}>Потрачено</div>
               </div>
-              <div className="stat-card">
-                <div className="stat-number">12</div>
-                <div className="stat-label">Поставщиков</div>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>12</div>
+                <div className={styles.statLabel}>Поставщиков</div>
               </div>
-              <div className="stat-card">
-                <div className="stat-number">8</div>
-                <div className="stat-label">Категорий</div>
+              <div className={styles.statCard}>
+                <div className={styles.statNumber}>8</div>
+                <div className={styles.statLabel}>Категорий</div>
               </div>
             </div>
           </div>

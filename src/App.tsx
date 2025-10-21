@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+import styles from './App.module.scss';
 import Header from './components/Header';
 import MarketplaceSection from './components/MarketplaceSection';
 import CategoryCard from './components/CategoryCard';
@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="App">
+      <div className={styles.app}>
         <Header />
 
         <main className="main-content">
@@ -28,14 +28,14 @@ const App: React.FC = () => {
             <Route path="/" element={
               <>
                 <MarketplaceSection />
-                <section className="categories-section">
-                  <div className="categories-container">
-                    <div className="categories-header">
-                      <h2 className="categories-title">Обзор категорий</h2>
-                      <p className="categories-description">Выберите категорию для начала</p>
+                <section className={styles.categoriesSection}>
+                  <div className={styles.categoriesContainer}>
+                    <div className={styles.categoriesHeader}>
+                      <h2 className={styles.categoriesTitle}>Обзор категорий</h2>
+                      <p className={styles.categoriesDescription}>Выберите категорию для начала</p>
                     </div>
 
-                    <div className="categories-grid">
+                    <div className={styles.categoriesGrid}>
                       {categories.map(category => (
                         <CategoryCard
                           key={category.id}

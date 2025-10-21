@@ -1,0 +1,125 @@
+/* Стили для секции описания */
+.descriptionSection {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+  }
+}
+
+.descriptionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p {
+    font-size: 16px;
+    color: #364153;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 16px;
+    color: #364153;
+    line-height: 1.6;
+
+    &::before {
+      content: "•";
+      color: #155DFC;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+  }
+}
+
+.techSpecs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #F9FAFB;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.specItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.specLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4A5565;
+  line-height: 1.43;
+  flex-shrink: 0;
+}
+
+.specValue {
+  font-size: 14px;
+  color: #101828;
+  line-height: 1.43;
+  text-align: right;
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .descriptionSection {
+    padding: 16px;
+
+    h3 {
+      font-size: 18px;
+    }
+  }
+  
+  .descriptionContent {
+    h4 {
+      font-size: 16px;
+    }
+    
+    p,
+    li {
+      font-size: 14px;
+    }
+  }
+  
+  .specItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .specValue {
+    text-align: left;
+  }
+}

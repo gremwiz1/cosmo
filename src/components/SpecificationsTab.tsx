@@ -1,5 +1,5 @@
 import React from 'react';
-import './SpecificationsTab.css';
+import styles from './SpecificationsTab.module.scss';
 
 const SpecificationsTab: React.FC = () => {
   const handleDownloadTDS = () => {
@@ -21,11 +21,11 @@ const SpecificationsTab: React.FC = () => {
   ];
 
   return (
-    <div className="tab-content">
-      <div className="specifications-section">
-        <div className="specifications-header">
+    <div className={styles.tabContent}>
+      <div className={styles.specificationsSection}>
+        <div className={styles.specificationsHeader}>
           <h3>Технические характеристики</h3>
-          <button className="download-tds-button" onClick={handleDownloadTDS}>
+          <button className={styles.downloadTdsButton} onClick={handleDownloadTDS}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M8 1V15M1 8H15" stroke="#155DFC" strokeWidth="1.33" strokeLinecap="round"/>
             </svg>
@@ -33,19 +33,19 @@ const SpecificationsTab: React.FC = () => {
           </button>
         </div>
         
-        <div className="specifications-table">
-          <div className="table-header">
-            <div className="table-cell header-cell">Параметр</div>
-            <div className="table-cell header-cell">Спецификации / ТДС</div>
-            <div className="table-cell header-cell">Метод испытания</div>
+        <div className={styles.specificationsTable}>
+          <div className={styles.tableHeader}>
+            <div className={`${styles.tableCell} ${styles.headerCell}`}>Параметр</div>
+            <div className={`${styles.tableCell} ${styles.headerCell}`}>Спецификации / ТДС</div>
+            <div className={`${styles.tableCell} ${styles.headerCell}`}>Метод испытания</div>
           </div>
           
-          <div className="table-body">
+          <div className={styles.tableBody}>
             {specifications.map((spec, index) => (
-              <div key={index} className="table-row">
-                <div className="table-cell">{spec.parameter}</div>
-                <div className="table-cell">{spec.specification}</div>
-                <div className="table-cell">{spec.testMethod}</div>
+              <div key={index} className={styles.tableRow}>
+                <div className={styles.tableCell}>{spec.parameter}</div>
+                <div className={styles.tableCell}>{spec.specification}</div>
+                <div className={styles.tableCell}>{spec.testMethod}</div>
               </div>
             ))}
           </div>

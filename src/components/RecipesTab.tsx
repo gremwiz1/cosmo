@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './RecipesTab.css';
+import styles from './RecipesTab.module.scss';
 
 const RecipesTab: React.FC = () => {
   const [currentRecipe, setCurrentRecipe] = useState(0);
@@ -168,15 +168,15 @@ ${recipe.steps.map(step => `${step.number}. ${step.description}`).join('\n')}
   const currentRecipeData = recipes[currentRecipe];
 
   return (
-    <div className="tab-content">
-      <div className="recipes-header">
-        <div className="recipes-title-section">
+    <div className={styles.tabContent}>
+      <div className={styles.recipesHeader}>
+        <div className={styles.recipesTitleSection}>
           <h3>Примеры рецептур от поставщика</h3>
           <p>Образцы рецептур, показывающие как использовать CocoSoft™ CAB Premium в ваших продуктах</p>
         </div>
-        <div className="recipes-navigation">
+        <div className={styles.recipesNavigation}>
           <button 
-            className="nav-button" 
+            className={styles.navButton} 
             disabled={currentRecipe === 0}
             onClick={handlePrevRecipe}
           >
@@ -184,9 +184,9 @@ ${recipe.steps.map(step => `${step.number}. ${step.description}`).join('\n')}
               <path d="M10 12L6 8L10 4" stroke="#0A0A0A" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <span className="nav-counter">{currentRecipe + 1} / {recipes.length}</span>
+          <span className={styles.navCounter}>{currentRecipe + 1} / {recipes.length}</span>
           <button 
-            className="nav-button"
+            className={styles.navButton}
             disabled={currentRecipe === recipes.length - 1}
             onClick={handleNextRecipe}
           >
@@ -197,19 +197,19 @@ ${recipe.steps.map(step => `${step.number}. ${step.description}`).join('\n')}
         </div>
       </div>
       
-      <div className="recipe-card">
-        <div className="recipe-header">
-          <div className="recipe-title-section">
+      <div className={styles.recipeCard}>
+        <div className={styles.recipeHeader}>
+          <div className={styles.recipeTitleSection}>
             <h2>{currentRecipeData.title}</h2>
-            <div className="recipe-badges">
+            <div className={styles.recipeBadges}>
               {currentRecipeData.badges.map((badge, index) => (
-                <span key={index} className="badge">{badge}</span>
+                <span key={index} className={styles.badge}>{badge}</span>
               ))}
             </div>
             <p>{currentRecipeData.description}</p>
           </div>
-          <div className="recipe-actions">
-            <button className="copy-button" onClick={handleCopyToFormulator}>
+          <div className={styles.recipeActions}>
+            <button className={styles.copyButton} onClick={handleCopyToFormulator}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M13.5 6.5L13.5 1.5C13.5 0.671573 12.8284 0 12 0L1.5 0C0.671573 0 0 0.671573 0 1.5L0 12C0 12.8284 0.671573 13.5 1.5 13.5L6.5 13.5" stroke="#155DFC" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M16 4.5L16 15C16 15.8284 15.3284 16.5 14.5 16.5L4 16.5C3.17157 16.5 2.5 15.8284 2.5 15L2.5 4.5C2.5 3.67157 3.17157 3 4 3L14.5 3C15.3284 3 16 3.67157 16 4.5Z" stroke="#155DFC" strokeWidth="1.33" strokeLinecap="round" strokeLinejoin="round"/>
@@ -217,7 +217,7 @@ ${recipe.steps.map(step => `${step.number}. ${step.description}`).join('\n')}
               Скопировать в формулятор
             </button>
             <button 
-              className="download-button" 
+              className={styles.downloadButton} 
               onClick={handleDownloadPDF}
               disabled={isDownloading}
             >
@@ -229,28 +229,28 @@ ${recipe.steps.map(step => `${step.number}. ${step.description}`).join('\n')}
           </div>
         </div>
         
-        <div className="recipe-content">
-          <div className="ingredients-section">
-            <div className="section-header">
+        <div className={styles.recipeContent}>
+          <div className={styles.ingredientsSection}>
+            <div className={styles.sectionHeader}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M10 1L12.5 6.5L18.5 6.5L14 10L15.5 16L10 12.5L4.5 16L6 10L1.5 6.5L7.5 6.5L10 1Z" stroke="#155DFC" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               <h4>Ингредиенты (100% Итого)</h4>
             </div>
             
-            <div className="ingredients-list">
+            <div className={styles.ingredientsList}>
               {currentRecipeData.ingredients.map((ingredient, index) => (
-                <div key={index} className={`ingredient-item ${ingredient.highlighted ? 'highlighted' : ''}`}>
-                  <div className="ingredient-info">
-                    <span className="phase-badge">{ingredient.phase}</span>
-                    <div className="ingredient-details">
-                      <span className="ingredient-name">{ingredient.name}</span>
+                <div key={index} className={`${styles.ingredientItem} ${ingredient.highlighted ? styles.highlighted : ''}`}>
+                  <div className={styles.ingredientInfo}>
+                    <span className={styles.phaseBadge}>{ingredient.phase}</span>
+                    <div className={styles.ingredientDetails}>
+                      <span className={styles.ingredientName}>{ingredient.name}</span>
                       {ingredient.brand && (
-                        <span className="ingredient-brand">{ingredient.brand}</span>
+                        <span className={styles.ingredientBrand}>{ingredient.brand}</span>
                       )}
                     </div>
                   </div>
-                  <span className="ingredient-percentage">{ingredient.percentage}</span>
+                  <span className={styles.ingredientPercentage}>{ingredient.percentage}</span>
                 </div>
               ))}
             </div>
@@ -337,7 +337,7 @@ ${recipe.steps.map(step => `${step.number}. ${step.description}`).join('\n')}
             </div>
             
             <div className="supplier-tips">
-              <div className="section-header">
+              <div className={styles.sectionHeader}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M10 1L12.5 6.5L18.5 6.5L14 10L15.5 16L10 12.5L4.5 16L6 10L1.5 6.5L7.5 6.5L10 1Z" stroke="#733E0A" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -378,7 +378,7 @@ ${recipe.steps.map(step => `${step.number}. ${step.description}`).join('\n')}
               </div>
               <div className="preview-badges">
                 {recipe.badges.map((badge, index) => (
-                  <span key={index} className="badge">{badge}</span>
+                  <span key={index} className={styles.badge}>{badge}</span>
                 ))}
               </div>
             </div>

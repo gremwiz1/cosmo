@@ -1,56 +1,69 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import './Header.css';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import styles from "./Header.module.scss";
+import logo from "../assets/images/logo.png";
+import cartIcon from "../assets/images/cart-icon.png";
+import languageIcon from "../assets/images/language-icon.png";
 
 const Header: React.FC = () => {
   const location = useLocation();
   return (
-    <nav className="navigation">
-      <div className="nav-container">
-        <div className="nav-left">
-          <Link to="/" className="logo">
-            <div className="logo-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#155DFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="#155DFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="#155DFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="logo-text">
-              <div className="logo-title">CosmoTech</div>
-              <div className="logo-subtitle">by CosmoHome</div>
-            </div>
+    <nav className={styles.navigation}>
+      <div className={styles.navContainer}>
+        <div className={styles.navLeft}>
+          <Link to="/" className={styles.logo}>
+            <img src={logo} alt="logo" className={styles.logoIcon} />
           </Link>
-          
-          <div className="nav-menu">
-            <Link to="/dashboard" className={`nav-item ${location.pathname === '/dashboard' ? 'active' : ''}`}>
+
+          <div className={styles.navMenu}>
+            <Link
+              to="/dashboard"
+              className={`${styles.navItem} ${
+                location.pathname === "/dashboard" ? styles.active : ""
+              }`}
+            >
               Панель
             </Link>
-            <Link to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
+            <Link
+              to="/"
+              className={`${styles.navItem} ${
+                location.pathname === "/" ? styles.active : ""
+              }`}
+            >
               Маркетплейс
             </Link>
-            <Link to="/formulator" className={`nav-item ${location.pathname === '/formulator' ? 'active' : ''}`}>
+            <Link
+              to="/formulator"
+              className={`${styles.navItem} ${
+                location.pathname === "/formulator" ? styles.active : ""
+              }`}
+            >
               Формулятор
             </Link>
-            <Link to="/education" className={`nav-item ${location.pathname === '/education' ? 'active' : ''}`}>
+            <Link
+              to="/education"
+              className={`${styles.navItem} ${
+                location.pathname === "/education" ? styles.active : ""
+              }`}
+            >
               Обучение
             </Link>
           </div>
         </div>
-        
-        <div className="nav-right">
-          <button className="nav-button">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M8 1V15M1 8H15" stroke="#0A0A0A" strokeWidth="1.33" strokeLinecap="round"/>
-            </svg>
+
+        <div className={styles.navRight}>
+          <button className={styles.navButton}>
+            <img src={languageIcon} alt="language" width="16" height="16" className={styles.languageIcon}/>
           </button>
-          <button className="nav-button primary">Поддержка</button>
-          <Link to="/profile" className="user-avatar">SJ</Link>
-          <button className="nav-button">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M2 2L14 14M14 2L2 14" stroke="#364153" strokeWidth="1.67" strokeLinecap="round"/>
-            </svg>
+          <button className={`${styles.navButton} ${styles.support}`}>
+            Поддержка
           </button>
+          <button className={styles.navButton}>
+            <img src={cartIcon} alt="Cart" width="16" height="16" className={styles.cartIcon}/>
+          </button>
+          <Link to="/profile" className={styles.userAvatar}>
+            SJ
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { categories } from '../data/mockData';
-import './CategoryPage.css';
+import styles from './CategoryPage.module.scss';
 
 // Подкатегории для сырья согласно макету Figma
 const rawMaterialSubcategories = [
@@ -120,10 +120,10 @@ const CategoryPage: React.FC = () => {
   };
 
   return (
-    <div className="category-page">
+    <div className={styles.categoryPage}>
       {/* Кнопка назад */}
-      <div className="back-button-container">
-        <button className="back-button" onClick={handleBackToCategories}>
+      <div className={styles.backButtonContainer}>
+        <button className={styles.backButton} onClick={handleBackToCategories}>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -132,34 +132,34 @@ const CategoryPage: React.FC = () => {
       </div>
 
       {/* Заголовок категории */}
-      <div className="category-page-header">
-        <div className="category-header-content">
-          <h1 className="category-page-title">{category?.name || 'Сырьё'}</h1>
-          <p className="category-page-description">
+      <div className={styles.categoryPageHeader}>
+        <div className={styles.categoryHeaderContent}>
+          <h1 className={styles.categoryPageTitle}>{category?.name || 'Сырьё'}</h1>
+          <p className={styles.categoryPageDescription}>
             {category?.description || 'Химические ингредиенты, экстракты и компоненты для формул'}
           </p>
         </div>
       </div>
       
       {/* Подкатегории товаров */}
-      <div className="subcategories-section">
-        <div className="subcategories-header">
-          <h2 className="subcategories-title">Категории товаров</h2>
-          <p className="subcategories-description">Выберите категорию для просмотра товаров</p>
+      <div className={styles.subcategoriesSection}>
+        <div className={styles.subcategoriesHeader}>
+          <h2 className={styles.subcategoriesTitle}>Категории товаров</h2>
+          <p className={styles.subcategoriesDescription}>Выберите категорию для просмотра товаров</p>
         </div>
         
-        <div className="subcategories-grid">
+        <div className={styles.subcategoriesGrid}>
           {rawMaterialSubcategories.map(subcategory => (
             <div 
               key={subcategory.id}
-              className="subcategory-card"
+              className={styles.subcategoryCard}
               style={{ 
                 background: subcategory.gradient,
                 borderColor: subcategory.borderColor
               }}
               onClick={() => handleSubcategoryClick(subcategory)}
             >
-              <div className="subcategory-icon" style={{ backgroundColor: subcategory.color }}>
+              <div className={styles.subcategoryIcon} style={{ backgroundColor: subcategory.color }}>
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <rect width="32" height="32" rx="16" fill="currentColor" opacity="0.1"/>
                   <path d="M16 8L20 12L16 16L12 12L16 8Z" fill="currentColor"/>
@@ -168,13 +168,13 @@ const CategoryPage: React.FC = () => {
                 </svg>
               </div>
               
-              <div className="subcategory-content">
-                <h3 className="subcategory-name">{subcategory.name}</h3>
-                <div className="subcategory-footer">
-                  <span className="subcategory-count" style={{ color: subcategory.color }}>
+              <div className={styles.subcategoryContent}>
+                <h3 className={styles.subcategoryName}>{subcategory.name}</h3>
+                <div className={styles.subcategoryFooter}>
+                  <span className={styles.subcategoryCount} style={{ color: subcategory.color }}>
                     {subcategory.productCount} товаров
                   </span>
-                  <button className="subcategory-button" style={{ color: subcategory.color }}>
+                  <button className={styles.subcategoryButton} style={{ color: subcategory.color }}>
                     Открыть →
                   </button>
                 </div>

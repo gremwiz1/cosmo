@@ -1,3 +1,4 @@
+// Global reset
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +20,7 @@ code {
     monospace;
 }
 
-/* Reset button styles */
+// Reset button styles
 button {
   border: none;
   background: none;
@@ -27,15 +28,15 @@ button {
   font-family: inherit;
 }
 
-/* Reset input styles */
+// Reset input styles
 input, textarea, select {
   font-family: inherit;
   border: none;
   outline: none;
 }
 
-/* Modal overlay */
-.modal-overlay {
+// Modal overlay
+.modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -48,8 +49,8 @@ input, textarea, select {
   z-index: 1000;
 }
 
-/* Modal content */
-.modal-content {
+// Modal content
+.modalContent {
   background: white;
   border-radius: 12px;
   padding: 24px;
@@ -60,8 +61,8 @@ input, textarea, select {
   position: relative;
 }
 
-/* Close button */
-.close-button {
+// Close button
+.closeButton {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -71,18 +72,18 @@ input, textarea, select {
   cursor: pointer;
   color: #6B7280;
   padding: 4px;
+
+  &:hover {
+    color: #0A0A0A;
+  }
 }
 
-.close-button:hover {
-  color: #0A0A0A;
-}
-
-/* Form styles */
-.form-group {
+// Form styles
+.formGroup {
   margin-bottom: 16px;
 }
 
-.form-label {
+.formLabel {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
@@ -90,20 +91,20 @@ input, textarea, select {
   font-size: 14px;
 }
 
-.form-input {
+.formInput {
   width: 100%;
   padding: 12px;
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   font-size: 14px;
   transition: border-color 0.2s;
+
+  &:focus {
+    border-color: #155DFC;
+  }
 }
 
-.form-input:focus {
-  border-color: #155DFC;
-}
-
-.form-textarea {
+.formTextarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #E5E7EB;
@@ -112,13 +113,13 @@ input, textarea, select {
   min-height: 100px;
   resize: vertical;
   transition: border-color 0.2s;
+
+  &:focus {
+    border-color: #155DFC;
+  }
 }
 
-.form-textarea:focus {
-  border-color: #155DFC;
-}
-
-.form-select {
+.formSelect {
   width: 100%;
   padding: 12px;
   border: 1px solid #E5E7EB;
@@ -126,13 +127,13 @@ input, textarea, select {
   font-size: 14px;
   background-color: white;
   transition: border-color 0.2s;
+
+  &:focus {
+    border-color: #155DFC;
+  }
 }
 
-.form-select:focus {
-  border-color: #155DFC;
-}
-
-/* Button styles */
+// Button styles
 .btn {
   padding: 12px 24px;
   border-radius: 8px;
@@ -144,51 +145,51 @@ input, textarea, select {
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  &.primary {
+    background-color: #155DFC;
+    color: white;
+
+    &:hover {
+      background-color: #1447E6;
+    }
+  }
+
+  &.secondary {
+    background-color: #F3F4F6;
+    color: #0A0A0A;
+
+    &:hover {
+      background-color: #E5E7EB;
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: #155DFC;
+    border: 1px solid #155DFC;
+
+    &:hover {
+      background-color: #155DFC;
+      color: white;
+    }
+  }
 }
 
-.btn-primary {
-  background-color: #155DFC;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #1447E6;
-}
-
-.btn-secondary {
-  background-color: #F3F4F6;
-  color: #0A0A0A;
-}
-
-.btn-secondary:hover {
-  background-color: #E5E7EB;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: #155DFC;
-  border: 1px solid #155DFC;
-}
-
-.btn-outline:hover {
-  background-color: #155DFC;
-  color: white;
-}
-
-/* Utility classes */
-.text-center {
+// Utility classes
+.textCenter {
   text-align: center;
 }
 
-.mb-4 {
+.mb4 {
   margin-bottom: 16px;
 }
 
-.mb-6 {
+.mb6 {
   margin-bottom: 24px;
 }
 
-.mt-4 {
+.mt4 {
   margin-top: 16px;
 }
 
@@ -196,22 +197,22 @@ input, textarea, select {
   display: flex;
 }
 
-.flex-col {
+.flexCol {
   flex-direction: column;
 }
 
-.items-center {
+.itemsCenter {
   align-items: center;
 }
 
-.justify-center {
+.justifyCenter {
   justify-content: center;
 }
 
-.gap-4 {
+.gap4 {
   gap: 16px;
 }
 
-.w-full {
+.wFull {
   width: 100%;
 }

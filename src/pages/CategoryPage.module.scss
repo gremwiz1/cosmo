@@ -1,4 +1,6 @@
-.category-page {
+/* CategoryPage.module.scss - Category page styles */
+
+.categoryPage {
   padding: 24px;
   max-width: 1280px;
   margin: 0 auto;
@@ -6,12 +8,12 @@
   min-height: 100vh;
 }
 
-/* Кнопка назад */
-.back-button-container {
+// Кнопка назад
+.backButtonContainer {
   margin-bottom: 16px;
 }
 
-.back-button {
+.backButton {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -24,22 +26,22 @@
   padding: 8px 12px;
   border-radius: 8px;
   transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #F3F4F6;
+  }
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(-2px);
+  }
 }
 
-.back-button:hover {
-  background-color: #F3F4F6;
-}
-
-.back-button svg {
-  transition: transform 0.2s ease;
-}
-
-.back-button:hover svg {
-  transform: translateX(-2px);
-}
-
-/* Заголовок категории */
-.category-page-header {
+// Заголовок категории
+.categoryPageHeader {
   background: white;
   border: 1px solid #E5E7EB;
   border-bottom: none;
@@ -47,12 +49,12 @@
   margin-bottom: 0;
 }
 
-.category-header-content {
+.categoryHeaderContent {
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.category-page-title {
+.categoryPageTitle {
   font-size: 36px;
   font-weight: 400;
   color: #0A0A0A;
@@ -61,7 +63,7 @@
   letter-spacing: 0.01em;
 }
 
-.category-page-description {
+.categoryPageDescription {
   font-size: 20px;
   color: #4A5565;
   margin: 0;
@@ -69,19 +71,19 @@
   letter-spacing: -0.02em;
 }
 
-/* Секция подкатегорий */
-.subcategories-section {
+// Секция подкатегорий
+.subcategoriesSection {
   background: white;
   border: 1px solid #E5E7EB;
   border-top: none;
   padding: 48px 24px;
 }
 
-.subcategories-header {
+.subcategoriesHeader {
   margin-bottom: 32px;
 }
 
-.subcategories-title {
+.subcategoriesTitle {
   font-size: 24px;
   font-weight: 400;
   color: #0A0A0A;
@@ -90,7 +92,7 @@
   letter-spacing: 0.003em;
 }
 
-.subcategories-description {
+.subcategoriesDescription {
   font-size: 16px;
   color: #4A5565;
   margin: 0;
@@ -98,8 +100,8 @@
   letter-spacing: -0.02em;
 }
 
-/* Сетка подкатегорий */
-.subcategories-grid {
+// Сетка подкатегорий
+.subcategoriesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
@@ -107,8 +109,8 @@
   margin: 0 auto;
 }
 
-/* Карточка подкатегории */
-.subcategory-card {
+// Карточка подкатегории
+.subcategoryCard {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -118,14 +120,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
   min-height: 200px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
 }
 
-.subcategory-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.subcategory-icon {
+.subcategoryIcon {
   width: 64px;
   height: 64px;
   border-radius: 16px;
@@ -133,20 +135,20 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
+  svg {
+    color: white;
+  }
 }
 
-.subcategory-icon svg {
-  color: white;
-}
-
-.subcategory-content {
+.subcategoryContent {
   display: flex;
   flex-direction: column;
   gap: 40px;
   flex: 1;
 }
 
-.subcategory-name {
+.subcategoryName {
   font-size: 20px;
   font-weight: 400;
   color: #0A0A0A;
@@ -155,21 +157,21 @@
   letter-spacing: -0.02em;
 }
 
-.subcategory-footer {
+.subcategoryFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 56px;
 }
 
-.subcategory-count {
+.subcategoryCount {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
   letter-spacing: -0.01em;
 }
 
-.subcategory-button {
+.subcategoryButton {
   background: none;
   border: none;
   font-size: 14px;
@@ -180,74 +182,74 @@
   transition: all 0.2s ease;
   line-height: 1.43;
   letter-spacing: -0.01em;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 
-.subcategory-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Responsive */
+// Responsive
 @media (max-width: 768px) {
-  .category-page {
+  .categoryPage {
     padding: 16px;
   }
   
-  .category-page-header {
+  .categoryPageHeader {
     padding: 24px 16px;
   }
   
-  .subcategories-section {
+  .subcategoriesSection {
     padding: 32px 16px;
   }
   
-  .category-page-title {
+  .categoryPageTitle {
     font-size: 28px;
   }
   
-  .category-page-description {
+  .categoryPageDescription {
     font-size: 18px;
   }
   
-  .subcategories-title {
+  .subcategoriesTitle {
     font-size: 20px;
   }
   
-  .subcategories-grid {
+  .subcategoriesGrid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
   
-  .subcategory-card {
+  .subcategoryCard {
     padding: 20px 0 20px 20px;
     gap: 24px;
   }
   
-  .subcategory-content {
+  .subcategoryContent {
     gap: 24px;
   }
   
-  .subcategory-footer {
+  .subcategoryFooter {
     gap: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .subcategory-card {
+  .subcategoryCard {
     padding: 16px 0 16px 16px;
     gap: 20px;
   }
   
-  .subcategory-content {
+  .subcategoryContent {
     gap: 20px;
   }
   
-  .subcategory-footer {
+  .subcategoryFooter {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
   
-  .subcategory-button {
+  .subcategoryButton {
     align-self: flex-end;
   }
 }

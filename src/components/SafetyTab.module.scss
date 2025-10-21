@@ -1,32 +1,32 @@
 /* Стили для секции безопасности и документов */
-.safety-section {
+.safetySection {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.documents-section {
+.documentsSection {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 24px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+  }
 }
 
-.documents-section h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #101828;
-  margin: 0 0 20px 0;
-  line-height: 1.4;
-}
-
-.documents-list {
+.documentsList {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.document-item {
+.documentItem {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -35,14 +35,14 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   transition: all 0.2s ease;
+
+  &:hover {
+    background: #F3F4F6;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
-.document-item:hover {
-  background: #F3F4F6;
-  border-color: rgba(0, 0, 0, 0.1);
-}
-
-.document-icon {
+.documentIcon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,13 +52,13 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   flex-shrink: 0;
+
+  span {
+    font-size: 20px;
+  }
 }
 
-.document-icon span {
-  font-size: 20px;
-}
-
-.document-info {
+.documentInfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,43 +66,45 @@
   gap: 16px;
 }
 
-.document-details h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #101828;
-  margin: 0 0 4px 0;
-  line-height: 1.5;
+.documentDetails {
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0 0 4px 0;
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: 14px;
+    color: #4A5565;
+    margin: 0 0 8px 0;
+    line-height: 1.43;
+  }
 }
 
-.document-details p {
-  font-size: 14px;
-  color: #4A5565;
-  margin: 0 0 8px 0;
-  line-height: 1.43;
-}
-
-.file-info {
+.fileInfo {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-.file-type,
-.file-size,
-.file-date {
+.fileType,
+.fileSize,
+.fileDate {
   font-size: 12px;
   color: #6A7282;
   line-height: 1.33;
 }
 
-.file-type {
+.fileType {
   background: #E5E7EB;
   padding: 2px 6px;
   border-radius: 4px;
   font-weight: 500;
 }
 
-.download-button {
+.downloadButton {
   padding: 8px 16px;
   background: #155DFC;
   color: white;
@@ -113,13 +115,13 @@
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
+
+  &:hover {
+    background-color: #0E4BC6;
+  }
 }
 
-.download-button:hover {
-  background-color: #0E4BC6;
-}
-
-.safety-info {
+.safetyInfo {
   display: flex;
   gap: 16px;
   background: #FEF3C7;
@@ -128,7 +130,7 @@
   padding: 20px;
 }
 
-.safety-icon {
+.safetyIcon {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -140,56 +142,58 @@
   margin-top: 4px;
 }
 
-.safety-content h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #92400E;
-  margin: 0 0 8px 0;
-  line-height: 1.5;
+.safetyContent {
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #92400E;
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: 14px;
+    color: #92400E;
+    line-height: 1.6;
+    margin: 0;
+  }
 }
 
-.safety-content p {
-  font-size: 14px;
-  color: #92400E;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Адаптивность */
+// Адаптивность
 @media (max-width: 768px) {
-  .documents-section,
-  .safety-info {
+  .documentsSection,
+  .safetyInfo {
     padding: 16px;
   }
   
-  .document-item {
+  .documentItem {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
   
-  .document-info {
+  .documentInfo {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     width: 100%;
   }
   
-  .download-button {
+  .downloadButton {
     width: 100%;
   }
   
-  .file-info {
+  .fileInfo {
     flex-wrap: wrap;
     gap: 8px;
   }
   
-  .safety-info {
+  .safetyInfo {
     flex-direction: column;
     gap: 12px;
   }
   
-  .safety-icon {
+  .safetyIcon {
     align-self: flex-start;
   }
 }
