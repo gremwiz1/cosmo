@@ -43,13 +43,21 @@
 }
 
 .categoryIcon {
-  width: 64px;
+  width: 240px;
   height: 64px;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.iconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .categoryContent {
@@ -64,7 +72,8 @@
   color: #0A0A0A;
   line-height: 1.4;
   letter-spacing: -0.45px;
-  margin: 0 0 12px 0;
+  margin: 0 0 32px 0;
+  max-width: 185px;
 }
 
 .categoryDescription {
@@ -73,7 +82,7 @@
   color: #4A5565;
   line-height: 1.43;
   letter-spacing: -0.15px;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
   flex: 1;
 }
 
@@ -81,7 +90,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   margin-top: auto;
 }
 

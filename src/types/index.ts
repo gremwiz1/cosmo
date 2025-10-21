@@ -5,6 +5,8 @@ export interface Category {
   name: string;
   description: string;
   productCount: number;
+  productCountText: string;
   color: string;
   gradient: string;
+  icon: string;
 }
