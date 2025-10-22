@@ -6,6 +6,7 @@ import SafetyTab from "../components/SafetyTab";
 import ApplicationTab from "../components/ApplicationTab";
 import RecipesTab from "../components/RecipesTab";
 import SupplierTab from "../components/SupplierTab";
+import SampleRequestModal from "../components/SampleRequestModal";
 import styles from "./ProductDetailPage.module.scss";
 import shareIcon from "../assets/images/share-icon.png";
 import saveIcon from "../assets/images/save-icon.png";
@@ -89,6 +90,7 @@ const ProductDetailPage: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const tabsHeaderRef = useRef<HTMLDivElement>(null);
 
   const _handleBackToProducts = () => {
@@ -116,6 +118,14 @@ const ProductDetailPage: React.FC = () => {
 
   const handleMouseLeave = () => {
     setIsDragging(false);
+  };
+
+  const handleSampleRequest = () => {
+    setIsSampleModalOpen(true);
+  };
+
+  const handleCloseSampleModal = () => {
+    setIsSampleModalOpen(false);
   };
 
   const tabs = [
@@ -248,14 +258,17 @@ const ProductDetailPage: React.FC = () => {
               <img src={saveIcon} alt="save" className={styles.actionIcon} />
               Сохранить
             </button>
-            <button className={`${styles.actionButtonTop} ${styles.secondary}`}>
-              <img
-                src={sampleIcon}
-                alt="sample"
-                className={styles.actionIcon}
-              />
-              Запросить образец
-            </button>
+                  <button 
+                    className={`${styles.actionButtonTop} ${styles.secondary}`}
+                    onClick={handleSampleRequest}
+                  >
+                    <img
+                      src={sampleIcon}
+                      alt="sample"
+                      className={styles.actionIcon}
+                    />
+                    Запросить образец
+                  </button>
             <button className={`${styles.actionButtonTop} ${styles.primary}`}>
               <img src={priceIcon} alt="price" className={styles.actionIcon} />
               Запросить цену
@@ -646,6 +659,16 @@ const ProductDetailPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Sample Request Modal */}
+      <SampleRequestModal
+        isOpen={isSampleModalOpen}
+        onClose={handleCloseSampleModal}
+        productName={mockProduct.name}
+        productInci={mockProduct.inci}
+        supplierName={mockProduct.supplier.name}
+        productPrice={mockProduct.price}
+      />
     </div>
   );
 };
