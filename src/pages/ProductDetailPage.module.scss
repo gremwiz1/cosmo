@@ -1,7 +1,24 @@
-.product-detail-page {
+.productDetailPage {
   background: #F9FAFB;
   min-height: 100vh;
   padding: 0;
+}
+
+.actionButtonTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding-left: 11px;
+  padding-right: 11px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 /* Хлебные крошки */
@@ -9,41 +26,47 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 24px;
+  padding-left: 24px;
+  padding-top: 16px;
   background: white;
   border-bottom: 1px solid #E5E7EB;
+  width: 1293px;
+  margin: 0 auto;
 }
 
-.breadcrumb-item {
+.breadcrumbItem {
   display: flex;
   align-items: center;
 }
 
-.breadcrumb-link {
+.breadcrumbLink {
   font-size: 14px;
   color: #6B7280;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.breadcrumb-link:hover {
+.breadcrumbLink:hover {
   color: #155DFC;
 }
 
-.breadcrumb-current {
+.breadcrumbCurrent {
   font-size: 14px;
   color: #0A0A0A;
   font-weight: 500;
 }
 
 /* Заголовок товара */
-.product-header {
+.productHeader {
   background: white;
   border-bottom: 1px solid #E5E7EB;
   padding: 16px 24px;
+  padding-bottom: 32px;
+  width: 1341px;
+  margin: 0 auto;
 }
 
-.product-header-content {
+.productHeaderContent {
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -52,11 +75,11 @@
   gap: 24px;
 }
 
-.product-title-section {
+.productTitleSection {
   flex: 1;
 }
 
-.product-name {
+.productName {
   font-size: 30px;
   font-weight: 600;
   color: #101828;
@@ -64,43 +87,65 @@
   line-height: 1.2;
 }
 
-.product-inci {
+.productInci {
   font-size: 18px;
   color: #4A5565;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
+  line-height: 28px;
+  letter-spacing: -0.44px;
 }
 
-.product-badges {
+.productBadges {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+  height: 22px;
+  align-items: center;
 }
 
-.product-badge {
+.productBadge {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 2px 5px;
   background-color: #EFF6FF;
   color: #1447E6;
   border: 1px solid transparent;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 500;
+  line-height: 16px;
+  text-align: center;
 }
 
-.supplier-info {
+.productBadge:first-child {
+  min-width: 79.19px;
+}
+
+.productBadge:nth-child(2) {
+  min-width: 109.28px;
+}
+
+.productBadge:nth-child(3) {
+  min-width: 96px;
+}
+
+.productBadge:nth-child(4) {
+  min-width: 57px;
+}
+
+.supplierInfo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
-.supplier-label {
+.supplierLabel {
   font-size: 14px;
   color: #4A5565;
 }
 
-.supplier-link {
+.supplierLink {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -113,38 +158,38 @@
   transition: color 0.2s ease;
 }
 
-.supplier-link:hover {
+.supplierLink:hover {
   color: #0F4BCB;
 }
 
-.rating-info {
+.ratingInfo {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.rating-value {
+.ratingValue {
   font-size: 14px;
   font-weight: 500;
   color: #0A0A0A;
 }
 
-.reviews-count {
+.reviewsCount {
   font-size: 14px;
   color: #6A7282;
 }
 
-.product-actions {
+.productActions {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.action-button {
+.actionButton {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
+  justify-content: center;
+  height: 36px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
@@ -152,89 +197,172 @@
   transition: all 0.2s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
-.action-button.primary {
+.actionButtonTop.primary {
   background-color: #155DFC;
   color: white;
   border-color: #155DFC;
 }
 
-.action-button.primary:hover {
+.actionButtonTop.primary:hover {
   background-color: #0F4BCB;
 }
 
-.action-button.secondary {
+.actionButton.primary {
+  background-color: #155DFC;
+  color: white;
+  border-color: #155DFC;
+}
+
+.actionButton.primary:hover {
+  background-color: #0F4BCB;
+}
+
+.actionButton.secondary {
   background-color: white;
   color: #0A0A0A;
 }
 
-.action-button.secondary:hover {
+.actionButton.secondary:hover {
   background-color: #F9FAFB;
 }
 
+.actionIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 14px;
+}
+
+.supplierArrowIcon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.starRatingIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.specIconImage {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.certificateIcon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.volumePricesIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.volumeArrowIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.availabilityIcon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.actionButtonIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 16px;
+}
+
+.supportButtonIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
 /* Основной контент */
-.product-detail-content {
+.productDetailContent {
   display: grid;
-  grid-template-columns: 1fr 415px;
+  grid-template-columns: 854px 415px;
   gap: 24px;
-  max-width: 1400px;
+  width: 1293px;
+  height: 1212px;
   margin: 0 auto;
-  padding: 24px;
+  margin-top: 32px;
 }
 
 /* Левая панель */
-.product-left-panel {
+.productLeftPanel {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 854px;
+  height: 1212px;
 }
 
-.product-main-card {
+.productMainCard {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 24px;
   display: flex;
   gap: 24px;
+  width: 854px;
+  height: 439px;
 }
 
-.product-image-section {
-  flex: 0 0 300px;
+.productImageSection {
+  width: 307.19px;
+  height: 389px;
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
-.specifications-section {
-  flex: 1;
+.specificationsSection {
+  width: 472.8px;
+  height: 389px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.product-image {
+.productImage {
   width: 100%;
-  height: 200px;
+  height: 309.17px;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 12px;
   background: linear-gradient(135deg, rgba(239, 246, 255, 1) 0%, rgba(224, 231, 255, 1) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.product-image img {
-  width: 100%;
-  height: 100%;
+.productImage img {
+  width: 96px;
+  height: 96px;
   object-fit: cover;
 }
 
-.product-description-card {
+.productDescriptionCard {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 24px;
 }
 
-.product-description {
+.productDescription {
   font-size: 12px;
   line-height: 1.33;
   color: #6A7282;
@@ -243,66 +371,69 @@
 }
 
 
-.specifications-section h3 {
+.specificationsSection h3 {
   font-size: 16px;
   font-weight: 600;
   color: #101828;
-  margin: 0 0 16px 0;
+  margin: 0;
 }
 
-.specifications-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
+.specificationsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 472.8px;
+  height: 276px;
+  gap: 12px;
 }
 
-.spec-item {
+.specItem {
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 230px;
+  height: 36px;
 }
 
-.spec-icon {
+.specIcon {
   flex-shrink: 0;
 }
 
-.spec-content {
+.specContent {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.spec-label {
+.specLabel {
   font-size: 12px;
   color: #6A7282;
 }
 
-.spec-value {
+.specValue {
   font-size: 14px;
   font-weight: 500;
   color: #101828;
 }
 
-.certificates-section {
+.certificatesSection {
   border-top: 1px solid #E5E7EB;
   padding-top: 13px;
 }
 
-.certificates-label {
+.certificatesLabel {
   font-size: 12px;
   color: #6A7282;
   margin-bottom: 8px;
   display: block;
 }
 
-.certificates-list {
+.certificatesList {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.certificate-badge {
+.certificateBadge {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -316,33 +447,50 @@
 }
 
 /* Правая панель - цены и заказ */
-.product-right-panel {
+.productRightPanel {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 415px;
 }
 
 /* Секция с вкладками */
-.tabs-section {
-  width: 100%;
+.tabsSection {
+  width: 854px;
+  height: 749px;
 }
 
-.tabs-container {
+.tabsContainer {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  width: 854px;
+  height: 749px;
 }
 
-.tabs-header {
+.tabsHeader {
   display: flex;
   border-bottom: 1px solid #E5E7EB;
   overflow-x: auto;
+  width: 852px;
+  height: 49px;
+  min-width: 0; /* Позволяет flex-элементам сжиматься */
+  scroll-behavior: smooth; /* Плавная прокрутка */
+  user-select: none; /* Предотвращаем выделение текста при перетаскивании */
+
+  /* Скрываем скролл, но оставляем функциональность */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 }
 
-.tab-button {
+.tabButton {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -357,19 +505,23 @@
   white-space: nowrap;
   border-bottom: 2px solid transparent;
   position: relative;
+  flex-shrink: 0;
+  min-width: max-content; /* Минимальная ширина по содержимому */
+  user-select: none; /* Предотвращаем выделение текста */
+  pointer-events: auto; /* Обеспечиваем работу кликов */
 }
 
-.tab-button:hover {
+.tabButton:hover {
   background-color: #F9FAFB;
 }
 
-.tab-button.active {
+.tabButton.active {
   color: #155DFC;
   border-bottom-color: #155DFC;
   background-color: #F0F7FF;
 }
 
-.tab-badge {
+.tabBadge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -384,27 +536,28 @@
   font-weight: 500;
 }
 
-.tabs-content {
+.tabsContent {
   flex: 1;
-  padding: 24px;
   overflow-y: auto;
+  width: 804px;
+  height: 642px;
 }
 
-.tab-content h3 {
+.tabContent h3 {
   font-size: 16px;
   font-weight: 600;
   color: #101828;
   margin: 0 0 12px 0;
 }
 
-.tab-content p {
+.tabContent p {
   font-size: 13px;
   line-height: 2;
   color: #364153;
   margin: 0 0 16px 0;
 }
 
-.content-section {
+.contentSection {
   margin-bottom: 24px;
 }
 
@@ -414,7 +567,7 @@
   margin: 24px 0;
 }
 
-.benefits-list {
+.benefitsList {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -423,44 +576,44 @@
   gap: 8px;
 }
 
-.benefit-item {
+.benefitItem {
   display: flex;
   align-items: flex-start;
   gap: 8px;
 }
 
-.benefit-item span {
+.benefitItem span {
   font-size: 16px;
   line-height: 1.5;
   color: #364153;
 }
 
-.usage-card {
+.usageCard {
   background-color: #EFF6FF;
   border: 1px solid #BEDBFF;
   border-radius: 10px;
   padding: 17px;
 }
 
-.usage-header {
+.usageHeader {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
 }
 
-.usage-label {
+.usageLabel {
   font-size: 14px;
   font-weight: 700;
   color: #1C398E;
 }
 
-.usage-value {
+.usageValue {
   font-size: 14px;
   color: #1C398E;
 }
 
-.usage-text {
+.usageText {
   font-size: 14px;
   line-height: 1.43;
   color: #193CB8;
@@ -468,64 +621,73 @@
 }
 
 /* Секция с ценами в правой панели */
-.pricing-section {
+.pricingSection {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.pricing-card {
+.pricingCard {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 24px;
+  width: 415px;
 }
 
-.pricing-card h3 {
+.pricingCard h3 {
   font-size: 16px;
   font-weight: 600;
   color: #101828;
   margin: 0 0 16px 0;
 }
 
-.price-display {
+.priceDisplay {
   background: linear-gradient(135deg, rgba(239, 246, 255, 1) 0%, rgba(238, 242, 255, 1) 100%);
   border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 16px;
+  padding-top: 16px;
+  padding-left: 16px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
 
-.price-main {
+.priceMain {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  margin-bottom: 4px;
+  height: 36px;
 }
 
-.price-amount {
+.priceAmount {
   font-size: 30px;
   font-weight: 700;
   color: #101828;
   line-height: 1.2;
 }
 
-.price-unit {
+.priceUnit {
   font-size: 16px;
   color: #4A5565;
 }
 
-.price-range {
+.priceRange {
   font-size: 12px;
   color: #6A7282;
   margin: 0;
+  height: 16px;
 }
 
-.volume-prices-button {
+.volumePricesButton {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 36px;
   padding: 8px 0;
+  margin-top: 16px;
   background: none;
   border: none;
   font-size: 14px;
@@ -535,41 +697,55 @@
   transition: color 0.2s ease;
 }
 
-.volume-prices-button:hover {
+.volumePricesButton:hover {
   color: #155DFC;
 }
 
-.calculator-section {
-  background: #F9FAFB;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 16px;
+.volumePricesButtonContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.calculator-label {
+.calculatorSection {
+  background: #F9FAFB;
+  border-radius: 10px;
+  padding: 32px 16px 0px;
+  height: 169px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calculatorLabel {
   font-size: 14px;
   font-weight: 500;
   color: #0A0A0A;
-  margin-bottom: 8px;
+  height: 20px;
   display: block;
 }
 
-.quantity-input {
+.quantityInput {
   display: flex;
   gap: 8px;
-  margin-bottom: 8px;
+  height: 36px;
 }
 
-.quantity-field {
+.quantityField {
   flex: 1;
   padding: 4px 12px;
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   font-size: 14px;
   color: #0A0A0A;
+  height: 36px;
 }
 
-.quantity-unit {
+.quantityUnit {
   display: flex;
   align-items: center;
   padding: 0 12px;
@@ -578,73 +754,82 @@
   border-radius: 8px;
   font-size: 14px;
   color: #4A5565;
+  width: 39.81px;
+  height: 36px;
 }
 
-.price-breakdown {
+.priceBreakdown {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  height: 61px;
 }
 
-.price-row {
+.priceRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 20px;
 }
 
-.price-row.total {
+.priceRow.total {
   border-top: 1px solid #E5E7EB;
-  padding-top: 8px;
+  padding-top: 4px;
+  height: 37px;
 }
 
-.price-label {
+.priceLabel {
   font-size: 14px;
   color: #4A5565;
 }
 
-.price-value {
+.priceValue {
   font-size: 14px;
   font-weight: 500;
   color: #0A0A0A;
 }
 
-.price-total {
+.priceTotal {
   font-size: 18px;
   font-weight: 700;
   color: #155DFC;
+  height: 28px;
+  align-self: end;
 }
 
-.order-info {
+.orderInfo {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  height: 144px;
+  margin-top: 36px;
 }
 
-.info-row {
+.infoRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #E5E7EB;
-  padding-bottom: 12px;
+  height: 41px;
 }
 
-.info-row:last-child {
+.infoRow:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.info-label {
+.infoLabel {
   font-size: 14px;
   color: #4A5565;
 }
 
-.info-value {
+.infoValue {
   font-size: 16px;
   font-weight: 500;
   color: #101828;
 }
 
-.availability-badge {
+.availabilityBadge {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -657,103 +842,99 @@
   font-weight: 500;
 }
 
-.action-buttons {
+.actionButtons {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #E5E7EB;
 }
 
-.volume-pricing-card {
+.volumePricingSection {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.volumePricingCard {
   background: #EFF6FF;
   border-radius: 10px;
   padding: 16px;
 }
 
-.volume-pricing-card h4 {
+.volumePricingCard h4 {
   font-size: 14px;
   font-weight: 500;
   color: #1C398E;
   margin: 0 0 8px 0;
 }
 
-.volume-pricing-card p {
+.volumePricingCard p {
   font-size: 12px;
   color: #193CB8;
   margin: 0 0 16px 0;
 }
 
-.volume-request-button {
+.volumeRequestButton {
   width: 100%;
-  padding: 8px 16px;
+  padding-left: 28px;
+  height: 32px;
   background: white;
   color: #0A0A0A;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
+  line-height: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.volume-request-button:hover {
+.volumeRequestButton:hover {
   background-color: #F9FAFB;
 }
 
-.support-card {
+.supportCard {
   background: #F9FAFB;
   border-radius: 10px;
   padding: 16px;
 }
 
-.support-card h4 {
+.supportSection {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.supportCard h4 {
   font-size: 14px;
   font-weight: 500;
   color: #101828;
   margin: 0 0 8px 0;
 }
 
-.support-card p {
+.supportCard p {
   font-size: 12px;
   color: #4A5565;
   margin: 0 0 16px 0;
 }
 
-.support-button {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  width: 100%;
-  padding: 8px 16px;
-  background: white;
-  color: #0A0A0A;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.support-button:hover {
-  background-color: #F3F4F6;
-}
-
 /* Стили для секции спецификаций */
-.specifications-header {
+.specificationsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.specifications-header h3 {
+.specificationsHeader h3 {
   font-size: 16px;
   font-weight: 600;
   color: #101828;
   margin: 0;
 }
 
-.download-tds-button {
+.downloadTdsButton {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -768,28 +949,28 @@
   transition: all 0.2s ease;
 }
 
-.download-tds-button:hover {
+.downloadTdsButton:hover {
   background-color: #F9FAFB;
 }
 
-.specifications-table {
+.specificationsTable {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.table-header {
+.tableHeader {
   background: #F9FAFB;
 }
 
-.table-row {
+.tableRow {
   display: grid;
   grid-template-columns: 234px 1fr 240px;
   min-height: 40px;
 }
 
-.table-head {
+.tableHead {
   display: flex;
   align-items: center;
   padding: 8px;
@@ -799,11 +980,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.table-body {
+.tableBody {
   background: white;
 }
 
-.table-cell {
+.tableCell {
   display: flex;
   align-items: center;
   padding: 8px;
@@ -812,23 +993,23 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.table-cell.method {
+.tableCell.method {
   color: #4A5565;
 }
 
-.table-row:last-child .table-cell {
+.tableRow:last-child .tableCell {
   border-bottom: none;
 }
 
 /* Стили для секции безопасности и документов */
-.documents-list {
+.documentsList {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 24px;
 }
 
-.document-item {
+.documentItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -838,18 +1019,18 @@
   gap: 16px;
 }
 
-.document-info {
+.documentInfo {
   display: flex;
   align-items: center;
   gap: 12px;
   flex: 1;
 }
 
-.document-icon {
+.documentIcon {
   flex-shrink: 0;
 }
 
-.document-details h4 {
+.documentDetails h4 {
   font-size: 16px;
   font-weight: 500;
   color: #101828;
@@ -857,14 +1038,14 @@
   line-height: 1.5;
 }
 
-.document-details p {
+.documentDetails p {
   font-size: 12px;
   color: #6A7282;
   margin: 0;
   line-height: 1.33;
 }
 
-.download-button {
+.downloadButton {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -880,11 +1061,11 @@
   flex-shrink: 0;
 }
 
-.download-button:hover {
+.downloadButton:hover {
   background-color: #F3F4F6;
 }
 
-.safety-info {
+.safetyInfo {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -894,12 +1075,12 @@
   padding: 17px;
 }
 
-.safety-icon {
+.safetyIcon {
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-.safety-content h4 {
+.safetyContent h4 {
   font-size: 16px;
   font-weight: 500;
   color: #733E0A;
@@ -907,7 +1088,7 @@
   line-height: 1.5;
 }
 
-.safety-content p {
+.safetyContent p {
   font-size: 14px;
   color: #894B00;
   margin: 0;
@@ -915,14 +1096,14 @@
 }
 
 /* Стили для секции применения */
-.applications-list {
+.applicationsList {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 24px;
 }
 
-.application-card {
+.applicationCard {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -933,11 +1114,11 @@
   gap: 16px;
 }
 
-.application-content {
+.applicationContent {
   flex: 1;
 }
 
-.application-content h4 {
+.applicationContent h4 {
   font-size: 16px;
   font-weight: 500;
   color: #101828;
@@ -945,14 +1126,14 @@
   line-height: 1.5;
 }
 
-.application-content p {
+.applicationContent p {
   font-size: 14px;
   color: #4A5565;
   margin: 0 0 8px 0;
   line-height: 1.43;
 }
 
-.usage-badge {
+.usageBadge {
   display: inline-block;
   background: #F3F4F6;
   color: #030213;
@@ -963,18 +1144,18 @@
   line-height: 1.33;
 }
 
-.application-icon {
+.applicationIcon {
   flex-shrink: 0;
 }
 
-.formulation-support {
+.formulationSupport {
   background: #EFF6FF;
   border: 1px solid #BEDBFF;
   border-radius: 10px;
   padding: 17px;
 }
 
-.formulation-support h4 {
+.formulationSupport h4 {
   font-size: 16px;
   font-weight: 500;
   color: #1C398E;
@@ -982,18 +1163,19 @@
   line-height: 1.5;
 }
 
-.formulation-support p {
+.formulationSupport p {
   font-size: 14px;
   color: #193CB8;
   margin: 0 0 16px 0;
   line-height: 1.43;
 }
 
-.support-button {
+.supportButton {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
+  height: 32px;
+  padding-left: 84px;
   background: white;
   color: #0A0A0A;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1004,193 +1186,193 @@
   transition: all 0.2s ease;
 }
 
-.support-button:hover {
+.supportButton:hover {
   background-color: #F3F4F6;
 }
 
 
 /* Адаптивность */
 @media (max-width: 1200px) {
-  .product-detail-content {
+  .productDetailContent {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
-  .product-right-panel {
+
+  .productRightPanel {
     grid-column: 1;
   }
 }
 
 @media (max-width: 1024px) {
-  .product-main-card {
+  .productMainCard {
     flex-direction: column;
   }
-  
-  .product-image-section {
+
+  .productImageSection {
     flex: none;
   }
-  
-  .specifications-grid {
+
+  .specificationsGrid {
     grid-template-columns: 1fr;
   }
-  
-  .product-header-content {
+
+  .productHeaderContent {
     flex-direction: column;
     align-items: flex-start;
   }
-  
-  .product-actions {
+
+  .productActions {
     width: 100%;
     justify-content: flex-start;
   }
-  
-  .table-row {
+
+  .tableRow {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  
-  .table-head,
-  .table-cell {
+
+  .tableHead,
+  .tableCell {
     border-bottom: none;
     padding: 4px 8px;
   }
-  
-  .table-head:first-child,
-  .table-cell:first-child {
+
+  .tableHead:first-child,
+  .tableCell:first-child {
     font-weight: 600;
     background: #F9FAFB;
     border-radius: 4px;
   }
-  
-  .document-item {
+
+  .documentItem {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-  
-  .document-info {
+
+  .documentInfo {
     width: 100%;
   }
-  
-  .download-button {
+
+  .downloadButton {
     align-self: flex-end;
   }
-  
-  .application-card {
+
+  .applicationCard {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-  
-  .application-content {
+
+  .applicationContent {
     width: 100%;
   }
-  
-  .application-icon {
+
+  .applicationIcon {
     align-self: flex-end;
   }
-  
-  .recipes-header {
+
+  .recipesHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-  
-  .recipe-header {
+
+  .recipeHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-  
-  .recipe-actions {
+
+  .recipeActions {
     width: 100%;
     justify-content: flex-start;
   }
-  
-  .recipe-content {
+
+  .recipeContent {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
-  .characteristics-grid {
+
+  .characteristicsGrid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  
-  .compliance-badges {
+
+  .complianceBadges {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  
-  .all-recipes-list {
+
+  .allRecipesList {
     flex-direction: column;
     gap: 12px;
   }
-  
-  .supplier-header {
+
+  .supplierHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-  
-  .supplier-details {
+
+  .supplierDetails {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-  
-  .supplier-details .divider {
+
+  .supplierDetails .divider {
     display: none;
   }
-  
-  .materials-grid {
+
+  .materialsGrid {
     grid-template-columns: 1fr;
     gap: 8px;
   }
 }
 
 @media (max-width: 768px) {
-  .product-detail-page {
+  .productDetailPage {
     padding: 0;
   }
-  
+
   .breadcrumbs {
     padding: 12px 16px;
   }
-  
-  .product-header {
+
+  .productHeader {
     padding: 12px 16px;
   }
-  
-  .product-detail-content {
+
+  .productDetailContent {
     padding: 16px;
   }
-  
-  
-  .product-name {
+
+
+  .productName {
     font-size: 24px;
   }
-  
-  .tabs-header {
+
+  .tabsHeader {
     flex-direction: column;
   }
-  
-  .tab-button {
+
+  .tabButton {
     text-align: left;
     border-bottom: 1px solid #E5E7EB;
     border-right: none;
   }
-  
-  .tab-button.active {
+
+  .tabButton.active {
     border-bottom-color: #155DFC;
     border-left: 2px solid #155DFC;
   }
-  
-  .product-actions {
+
+  .productActions {
     flex-direction: column;
   }
-  
-  .action-button {
+
+  .actionButton {
     justify-content: center;
   }
 }
