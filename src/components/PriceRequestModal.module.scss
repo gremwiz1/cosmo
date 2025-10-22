@@ -20,7 +20,7 @@
     border-radius: 10px;
     box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     width: 512px;
-    height: 781px;
+    height: 900px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -104,16 +104,6 @@
     border-radius: 10px;
 }
 
-.sampleSizeGroup {
-    display: flex;
-    width: 100%;
-    gap: 16px;
-}
-
-.sampleSizeGroup .fieldGroup {
-    width: 50%;
-}
-
 .productImage {
     width: 64px;
     height: 64px;
@@ -159,33 +149,6 @@
     }
 }
 
-.productPrice {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    max-width: 60px;
-    height: 40px;
-
-    .price {
-        font-family: Inter;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1.5em;
-        letter-spacing: -1.95%;
-        color: #101828;
-        text-align: right;
-    }
-
-    .shipping {
-        font-family: Inter;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.33em;
-        color: #6A7282;
-        text-align: right;
-    }
-}
-
 /* Form Fields */
 .formFields {
     display: flex;
@@ -193,10 +156,16 @@
     gap: 20px;
 }
 
+.fieldRow {
+    display: flex;
+    gap: 16px;
+}
+
 .fieldGroup {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
 
     label {
         font-family: Inter;
@@ -208,12 +177,42 @@
     }
 }
 
-.selectField {
+.volumeInputGroup {
+    display: flex;
+    gap: 8px;
+}
+
+.volumeInput {
+    flex: 1;
+    padding: 4px 12px;
+    height: 36px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43em;
+    letter-spacing: -1.07%;
+    color: #0A0A0A;
+    background: white;
+
+    &:focus {
+        outline: none;
+        border-color: #155DFC;
+    }
+
+    &::placeholder {
+        color: #6B7280;
+    }
+}
+
+.unitSelect {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 12px;
-    height: 40px;
+    width: 68.73px;
+    height: 36px;
     border: 1px solid #E5E7EB;
     border-radius: 8px;
     background: white;
@@ -229,26 +228,67 @@
     }
 }
 
-.quantityInput {
-    padding: 4px 12px;
-    height: 40px;
+.selectField {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    height: 36px;
     border: 1px solid #E5E7EB;
     border-radius: 8px;
+    background: white;
+    cursor: pointer;
+
+    span {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.43em;
+        letter-spacing: -1.07%;
+        color: #0A0A0A;
+    }
+}
+
+.certificatesList {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.certificateItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.certificateCheckbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+    &.checked {
+        background: #155DFC;
+        border-color: #155DFC;
+    }
+}
+
+.certificateLabel {
     font-family: Inter;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.43em;
     letter-spacing: -1.07%;
     color: #0A0A0A;
-    background: white;
-
-    &:focus {
-        outline: none;
-        border-color: #155DFC;
-    }
 }
 
-.commentTextarea {
+.requirementsTextarea {
     padding: 8px 12px;
     height: 96px;
     border: 1px solid #E5E7EB;
@@ -272,18 +312,91 @@
     }
 }
 
-/* Delivery Info */
-.deliveryInfo {
+.fileUploadArea {
+    border: 2px dashed #D1D5DC;
+    border-radius: 10px;
+    height: 132px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+        border-color: #155DFC;
+    }
+}
+
+.fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.fileUploadLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.fileUploadIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.fileUploadText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    p {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.43em;
+        letter-spacing: -1.07%;
+        color: #4A5565;
+        margin: 0;
+        text-align: center;
+    }
+
+    span {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.33em;
+        color: #6A7282;
+        text-align: center;
+    }
+}
+
+/* Response Info */
+.responseInfo {
+    display: flex;
+    align-items: flex-start;
     gap: 8px;
     padding: 12px;
     background: #EFF6FF;
+    border: 1px solid #BEDBFF;
     border-radius: 10px;
-    height: 60px;
+    height: 90px;
 }
 
-.deliveryInfoIcon {
+.responseTimeIcon {
     width: 20px;
     height: 20px;
     object-fit: contain;
@@ -295,7 +408,7 @@
         gap: 4px;
     }
 
-    .deliveryLabel {
+    .responseLabel {
         font-family: Inter;
         font-weight: 500;
         font-size: 14px;
@@ -305,82 +418,13 @@
         margin: 0;
     }
 
-    .deliveryTime {
+    .responseText {
         font-family: Inter;
         font-weight: 400;
         font-size: 12px;
         line-height: 1.33em;
         color: #1447E6;
         margin: 0;
-    }
-}
-
-/* Price Summary */
-.priceSummary {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 17px 17px 1px;
-    border: 1px solid #E5E7EB;
-    border-radius: 10px;
-    height: 127px;
-}
-
-.priceRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 20px;
-
-    span:first-child {
-        font-family: Inter;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.43em;
-        letter-spacing: -1.07%;
-        color: #4A5565;
-    }
-
-    span:last-child {
-        font-family: Inter;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.43em;
-        letter-spacing: -1.07%;
-        color: #0A0A0A;
-    }
-}
-
-.divider {
-    height: 1px;
-    background: rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-.totalRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 28px;
-    padding-top: 8px;
-    padding-bottom: 16px;
-
-    span:first-child {
-        font-family: Inter;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 1.5em;
-        letter-spacing: -1.95%;
-        color: #0A0A0A;
-    }
-
-    span:last-child {
-        font-family: Inter;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 1.56em;
-        letter-spacing: -2.44%;
-        color: #0A0A0A;
     }
 }
 
@@ -423,7 +467,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    width: 223px;
+    width: 297px;
     height: 36px;
     background: #155DFC;
     border: none;
@@ -440,6 +484,12 @@
     &:hover {
         background: #1447E6;
     }
+}
+
+.checkIcon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
 }
 
 /* Responsive Design */
@@ -462,10 +512,14 @@
         padding: 16px;
     }
 
-    .productPrice {
-        align-items: flex-start;
-        width: auto;
-        height: auto;
+    .fieldRow {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .certificatesList {
+        flex-direction: column;
+        gap: 12px;
     }
 
     .modalFooter {

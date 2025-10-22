@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./SampleRequestModal.module.scss";
+import productIcon from "../assets/images/modals/sample-modal-product-icon.png";
+import deliveryInfoIcon from "../assets/images/modals/delivery-info-icon.png";
 
 interface SampleRequestModalProps {
   isOpen: boolean;
@@ -77,24 +79,11 @@ const SampleRequestModal: React.FC<SampleRequestModalProps> = ({
           {/* Product Info */}
           <div className={styles.productInfo}>
             <div className={styles.productImage}>
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <rect width="32" height="32" rx="8" fill="url(#gradient)" />
-                <defs>
-                  <linearGradient
-                    id="gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="rgba(239, 246, 255, 1)" />
-                    <stop offset="100%" stopColor="rgba(224, 231, 255, 1)" />
-                  </linearGradient>
-                </defs>
-                <path d="M16 8L20 12L16 16L12 12L16 8Z" fill="#8EC5FF" />
-                <path d="M8 20L12 24L8 28L4 24L8 20Z" fill="#8EC5FF" />
-                <path d="M24 20L28 24L24 28L20 24L24 20Z" fill="#8EC5FF" />
-              </svg>
+              <img
+                src={productIcon}
+                alt="Product"
+                className={styles.productIconImage}
+              />
             </div>
             <div className={styles.productDetails}>
               <h4>{productName}</h4>
@@ -172,15 +161,11 @@ const SampleRequestModal: React.FC<SampleRequestModalProps> = ({
 
           {/* Delivery Info */}
           <div className={styles.deliveryInfo}>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M10 1L12.5 6.5L18.5 7.5L14.5 11.5L15.5 17.5L10 15L4.5 17.5L5.5 11.5L1.5 7.5L7.5 6.5L10 1Z"
-                stroke="#155DFC"
-                strokeWidth="1.67"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img
+              src={deliveryInfoIcon}
+              alt="Delivery Info"
+              className={styles.deliveryInfoIcon}
+            />
             <div>
               <p className={styles.deliveryLabel}>Ожидаемая доставка</p>
               <p className={styles.deliveryTime}>3-5 рабочих дней</p>

@@ -7,6 +7,7 @@ import ApplicationTab from "../components/ApplicationTab";
 import RecipesTab from "../components/RecipesTab";
 import SupplierTab from "../components/SupplierTab";
 import SampleRequestModal from "../components/SampleRequestModal";
+import PriceRequestModal from "../components/PriceRequestModal";
 import styles from "./ProductDetailPage.module.scss";
 import shareIcon from "../assets/images/share-icon.png";
 import saveIcon from "../assets/images/save-icon.png";
@@ -91,6 +92,7 @@ const ProductDetailPage: React.FC = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
+  const [isPriceModalOpen, setIsPriceModalOpen] = useState(false);
   const tabsHeaderRef = useRef<HTMLDivElement>(null);
 
   const _handleBackToProducts = () => {
@@ -126,6 +128,14 @@ const ProductDetailPage: React.FC = () => {
 
   const handleCloseSampleModal = () => {
     setIsSampleModalOpen(false);
+  };
+
+  const handlePriceRequest = () => {
+    setIsPriceModalOpen(true);
+  };
+
+  const handleClosePriceModal = () => {
+    setIsPriceModalOpen(false);
   };
 
   const tabs = [
@@ -269,7 +279,10 @@ const ProductDetailPage: React.FC = () => {
                     />
                     Запросить образец
                   </button>
-            <button className={`${styles.actionButtonTop} ${styles.primary}`}>
+            <button 
+              className={`${styles.actionButtonTop} ${styles.primary}`}
+              onClick={handlePriceRequest}
+            >
               <img src={priceIcon} alt="price" className={styles.actionIcon} />
               Запросить цену
             </button>
@@ -668,6 +681,15 @@ const ProductDetailPage: React.FC = () => {
         productInci={mockProduct.inci}
         supplierName={mockProduct.supplier.name}
         productPrice={mockProduct.price}
+      />
+
+      {/* Price Request Modal */}
+      <PriceRequestModal
+        isOpen={isPriceModalOpen}
+        onClose={handleClosePriceModal}
+        productName={mockProduct.name}
+        productInci={mockProduct.inci}
+        supplierName={mockProduct.supplier.name}
       />
     </div>
   );
